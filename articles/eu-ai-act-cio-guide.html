@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>What the EU AI Act Actually Requires of a CIO — Abhishek Sinha</title>
+  <meta name="description" content="Most CIOs are misreading the EU AI Act. Here is what it operationally requires — from someone who has built AI governance frameworks in regulated enterprise environments." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">Abhishek Sinha</a>
+      <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../articles.html" class="active">Writing</a></li>
+        <li><a href="https://www.linkedin.com/in/abhishek-sinha-bgl" target="_blank" class="nav-cta">LinkedIn ↗</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="article-header">
+    <div class="container article-header-inner">
+      <a href="../articles.html" class="back-link">← All writing</a>
+      <div class="article-header-meta">
+        <span class="article-tag-pill">AI Governance</span>
+        <span class="article-date">February 2026</span>
+        <span class="article-read-time">8 min read</span>
+      </div>
+      <h1 class="article-title">What the EU AI Act Actually Requires of a CIO — and Why Most Are Misreading It</h1>
+      <p class="article-standfirst">
+        Most of the coverage of the EU AI Act focuses on what it prohibits. Very little addresses what it operationally demands of the technology leaders responsible for implementation. Having built AI governance frameworks in regulated enterprise environments — and currently leading this exact transformation — here is what I have learned.
+      </p>
+      <div class="article-byline">
+        <span class="byline-name">Abhishek Sinha</span>
+        <span class="byline-role">Global CTO, Arth Group · Former IBM, Kyndryl</span>
+      </div>
+    </div>
+  </div>
+
+  <main class="article-main">
+    <div class="container article-body">
+
+      <p>
+        The EU AI Act became fully applicable in 2026. Boards across Europe — and in the boardrooms of every MNC with European operations — are asking their CIOs a version of the same question: <em>are we compliant?</em>
+      </p>
+
+      <p>
+        The problem is that most CIOs are answering the wrong version of that question. They are focused on what the Act prohibits — biometric categorisation systems, real-time remote surveillance, social scoring — and concluding that because they are not doing those things, they are broadly fine.
+      </p>
+
+      <p>
+        They are not broadly fine. The compliance challenge is not in the prohibited practices, which most enterprises were not using anyway. It is in the positive obligations — the things the Act requires you to <em>build and maintain</em> — that are now creating operational exposure.
+      </p>
+
+      <h2>The misconception: compliance as prohibition</h2>
+
+      <p>
+        When the EU AI Act conversation reaches the board, it typically arrives framed as a risk avoidance question. What are we doing that we should not be doing? The answer to that question is usually manageable. Most enterprise AI deployments do not involve prohibited practices.
+      </p>
+
+      <p>
+        But the Act is not primarily a prohibition framework. It is a <em>requirements</em> framework — specifically for what it classifies as high-risk AI systems. And the definition of high-risk is broader than most technology teams have assumed.
+      </p>
+
+      <p>
+        High-risk systems under the Act include AI used in employment decisions, performance evaluation, task allocation, and monitoring of employees. They include AI in access to essential services, credit scoring, and insurance. They include AI in educational settings, safety components of critical infrastructure, and AI that influences access to public services. If your organisation is using AI in any of these domains — and most enterprises are, even if they have not labelled it as such — you are operating a high-risk AI system under the Act.
+      </p>
+
+      <h2>What high-risk classification actually means operationally</h2>
+
+      <p>
+        For a CIO, high-risk classification triggers a set of positive obligations that require deliberate architecture and process design. These are not things you can retrofit once an audit arrives. They need to be built into how you deploy AI, not bolted on afterwards.
+      </p>
+
+      <p>
+        <strong>Risk management systems.</strong> The Act requires documented risk management processes for each high-risk AI system, maintained and updated throughout the system's lifecycle. This is not a one-time assessment. It is a living process that needs ownership, cadence, and tooling.
+      </p>
+
+      <p>
+        <strong>Data governance.</strong> High-risk systems require that training, validation, and testing datasets meet defined quality criteria — relevance, representativeness, freedom from errors. This means your data governance framework needs to extend explicitly to AI training data, not just operational data. Most enterprise data governance frameworks were not built with this scope.
+      </p>
+
+      <p>
+        <strong>Technical documentation.</strong> Before a high-risk system is deployed, you need detailed technical documentation covering its purpose, design, training approach, performance metrics, and known limitations. This documentation must be maintained and made available to national competent authorities on request. In practice, this means your AI development and procurement processes need a documentation standard.
+      </p>
+
+      <p>
+        <strong>Transparency and human oversight.</strong> High-risk AI systems must be designed to allow effective human oversight. This sounds straightforward. In practice, for complex AI systems that make or influence consequential decisions at scale, designing meaningful human oversight — oversight that is not purely performative — is a significant architectural challenge.
+      </p>
+
+      <p>
+        <strong>Accuracy, robustness, and cybersecurity.</strong> The Act requires that high-risk systems achieve appropriate levels of accuracy for their intended purpose, and that this is documented. It also requires resilience against attempts to alter outputs through adversarial inputs. This is an active security requirement, not just a performance one.
+      </p>
+
+      <h2>The CIO's specific exposure</h2>
+
+      <p>
+        There are three areas where I see the greatest operational exposure for technology leaders who have not yet built this infrastructure.
+      </p>
+
+      <p>
+        <strong>Shadow AI and unregistered deployments.</strong> The Act requires that high-risk AI systems be registered in an EU database before deployment. The compliance challenge is not registering the systems you know about — it is the AI tools that have been deployed by business units, integrated into SaaS platforms, or acquired through vendor relationships without going through a technology governance process. Most organisations have more AI in production than their technology function knows about. Closing that gap is a prerequisite for compliance.
+      </p>
+
+      <p>
+        <strong>Third-party and vendor AI.</strong> If you are deploying AI systems developed by a third party, the Act does not absolve you of obligations. As the deployer, you carry responsibility for ensuring the system meets requirements in the context of your deployment. This means your vendor management and procurement processes need new criteria — not just performance and cost, but AI Act conformity documentation, CE marking (for systems that require it), and contractual access to the technical documentation you will need to produce on request.
+      </p>
+
+      <p>
+        <strong>Agentic AI and automated decision chains.</strong> The fastest-growing area of enterprise AI deployment right now — agentic systems that take actions autonomously across multiple steps — creates the most complex compliance picture. When an agentic system makes or influences a decision that affects a person's employment, access to services, or financial situation, it may be operating as a high-risk AI system regardless of whether it was designed or labelled as one. The governance architecture for agentic AI needs to be built with the Act's requirements in mind from the start, not adapted from earlier AI governance models.
+      </p>
+
+      <h2>What I have learned building this in practice</h2>
+
+      <p>
+        At Arth Group, I am currently leading exactly this transformation — building the governance architecture for Agentic-AI deployment aligned with EU AI Act obligations. A few things I have found that are not in the analyst reports:
+      </p>
+
+      <p>
+        <strong>The inventory problem is harder than the governance problem.</strong> Before you can govern your AI systems, you need to know what they are. Getting a complete, accurate inventory of AI in production across a complex organisation — including systems acquired through SaaS, integrated into vendor platforms, and deployed by business units — is the first and most time-consuming task. Do not underestimate it.
+      </p>
+
+      <p>
+        <strong>Governance needs to be upstream, not downstream.</strong> The organisations that will find compliance straightforward are those that build Act requirements into their AI development and procurement processes — as a gate, not a retrospective check. If your first governance touchpoint is after a system is in production, you are already managing a problem rather than preventing one.
+      </p>
+
+      <p>
+        <strong>Human oversight needs to be real.</strong> The Act requires effective human oversight. Regulators and auditors will eventually test whether the oversight mechanisms in place are meaningful or performative. Designing oversight that actually catches problems — rather than oversight that exists on paper — requires genuine investment in process and tooling, not just policy documentation.
+      </p>
+
+      <p>
+        <strong>The board conversation needs to change.</strong> Most board-level AI Act discussions are still framed around prohibited practices and reputational risk. The CIO's role is to shift that conversation to the positive obligations — what needs to be built, who owns it, what it costs, and what the operational exposure is if it is not in place before an audit or incident triggers scrutiny.
+      </p>
+
+      <h2>The question worth asking</h2>
+
+      <p>
+        If a national competent authority asked you today to produce the technical documentation for your three most consequential AI systems — the ones making or influencing decisions that affect employees, customers, or people accessing your services — how long would it take, and what would it look like?
+      </p>
+
+      <p>
+        That question is worth sitting with. The answer tells you where you are on the compliance journey more honestly than any self-assessment framework.
+      </p>
+
+      <p>
+        The EU AI Act is not a future problem. For organisations operating in Europe, it is a current one. The CIOs who will navigate it with confidence are those who have already started building the infrastructure — the inventory, the governance processes, the documentation standards, the oversight mechanisms — before the audit arrives.
+      </p>
+
+      <p>
+        The ones who have not started yet are not behind. But they are running out of time to get ahead of it.
+      </p>
+
+      <div class="article-footer-bio">
+        <div class="bio-divider"></div>
+        <p class="bio-text">
+          <strong>Abhishek Sinha</strong> is a global technology executive with 30+ years of strategic leadership across IBM, Kyndryl and HP. He is currently Global CTO at Arth Group, where he is leading AI-first transformation and EU AI Act governance implementation. He is available for CIO, SVP IT, GCC Head, and Board Technology Advisor roles globally.
+        </p>
+        <div class="bio-links">
+          <a href="mailto:absinhablr@outlook.com">absinhablr@outlook.com</a>
+          <a href="https://www.linkedin.com/in/abhishek-sinha-bgl" target="_blank">LinkedIn ↗</a>
+        </div>
+      </div>
+
+      <div class="article-nav">
+        <a href="../articles.html" class="btn-ghost">← Back to all writing</a>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-left">
+        <span class="footer-name">Abhishek Sinha</span>
+        <span class="footer-desc">Technology Executive · CIO · GCC Head · Board Advisor</span>
+      </div>
+      <div class="footer-right">
+        <a href="mailto:absinhablr@outlook.com">absinhablr@outlook.com</a>
+        <a href="https://www.linkedin.com/in/abhishek-sinha-bgl" target="_blank">LinkedIn ↗</a>
+      </div>
+    </div>
+    <div class="container footer-base">
+      <span>© 2026 Abhishek Sinha. All views expressed are personal.</span>
+    </div>
+  </footer>
+
+</body>
+</html>
