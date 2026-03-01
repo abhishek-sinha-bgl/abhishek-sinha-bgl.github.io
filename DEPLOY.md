@@ -14,7 +14,7 @@
 
 1. Go to github.com and sign in
 2. Click the **+** icon in the top right → **New repository**
-3. Name it EXACTLY: `YOUR-USERNAME.github.io`
+3. Name it EXACTLY: `abhishek-sinha-bgl.github.io`
    - Example: if your username is `abhishek-sinha-bgl`, name it `abhishek-sinha-bgl.github.io`
    - This exact naming is required for GitHub Pages to work
 4. Set visibility to **Public**
@@ -53,7 +53,7 @@
 ## STEP 4 — Your site is live
 
 Within 1–3 minutes, your site will be live at:
-`https://YOUR-USERNAME.github.io`
+`https://abhishek-sinha-bgl.github.io`
 
 GitHub will show you the URL on the Pages settings screen once it's ready.
 
@@ -83,7 +83,7 @@ The new article will be live within seconds.
 If you register a domain (e.g. abhisheksinha.com) at a registrar like Namecheap (~£10/year):
 
 1. In GitHub Pages settings, enter your custom domain in the "Custom domain" field
-2. At your domain registrar, add a CNAME record pointing to `YOUR-USERNAME.github.io`
+2. At your domain registrar, add a CNAME record pointing to `abhishek-sinha-bgl.github.io`
 3. GitHub will automatically provision an SSL certificate (HTTPS) within 24 hours
 
 Full instructions: https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site
