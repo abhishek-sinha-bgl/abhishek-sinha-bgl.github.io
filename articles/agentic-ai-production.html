@@ -1,30 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Article — Abhishek Sinha</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="The gap between GenAI experimentation and Agentic AI in production. What governance, architecture, and security requirements look like at the enterprise level.">
+  <title>From GenAI Experimentation to Agentic AI in Production — Abhishek Sinha</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;1,8..60,300&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-  <nav class="nav"><div class="nav-inner">
-    <a href="../index.html" class="nav-logo">Abhishek Sinha</a>
-    <ul class="nav-links">
-      <li><a href="../index.html">Home</a></li><li><a href="../about.html">About</a></li>
-      <li><a href="../articles.html" class="active">Articles</a></li>
-      <li><a href="../about.html#contact" class="nav-cta">Get in Touch</a></li>
-    </ul>
-    <button class="nav-toggle" aria-label="Menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">&#9776;</button>
-  </div></nav>
-  <div class="article-layout">
-    <div class="article-header"><span class="tag">Coming Soon</span><h1>Article coming soon</h1></div>
-    <div class="article-body"><p>This article is being finalised. <a href="../articles.html">Read other articles →</a></p></div>
-    <div class="article-back"><a href="../articles.html" class="btn-text">← All Articles</a></div>
-  </div>
-  <footer class="footer"><div class="footer-inner">
-    <div><div class="footer-name">Abhishek Sinha</div><div class="footer-sub">Technology Executive · CIO · GCC Head · Board Advisor</div></div>
-    <nav class="footer-nav"><a href="mailto:absinhablr@outlook.com">absinhablr@outlook.com</a><a href="../articles.html">Articles</a></nav>
-  </div><div class="footer-copy">© 2026 Abhishek Sinha</div></footer>
-  <script src="../js/main.js"></script>
-</body></html>
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">Abhishek Sinha</a>
+      <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../articles.html" class="active">Articles</a></li>
+        <li><a href="../about.html#contact" class="nav-cta">Get in Touch</a></li>
+      </ul>
+    </div>
+  </nav>
+  <main class="article-page">
+    <div class="article-inner">
+      <a href="../articles.html" class="btn-text">← All Articles</a>
+      <div class="article-header">
+        <span class="tag">AIOps</span>
+        <h1>From GenAI Experimentation to Agentic AI in Production: The Governance Gap Nobody Talks About</h1>
+        <div class="meta"><span>October 2025</span><span>7 min read</span></div>
+        <p class="lede">Most enterprises have now run GenAI pilots. A significant number have graduated to production deployments. The next transition — from discrete AI models to Agentic AI systems that take multi-step actions autonomously — is where the governance frameworks most organisations have built will prove inadequate. Not because they were poorly designed, but because they were designed for a different class of system.</p>
+        <div class="byline"><strong>Abhishek Sinha</strong><span>Global CTO, Arth Group · Former IBM, Kyndryl, HP</span></div>
+      </div>
+      <div class="article-body">
+
+        <p>The pattern I am seeing across organisations at various stages of AI maturity is consistent: the governance model that was adequate for a GenAI tool — a model that takes an input and produces an output, with a human reviewing that output before acting on it — is not adequate for an Agentic AI system that takes an input and then executes a sequence of actions across multiple systems without a human review step between each action.</p>
+
+        <p>This is not a marginal difference. It is a qualitative shift in the risk profile of the system, and it requires a corresponding shift in how the system is governed, architected, and secured. The organisations that are building Agentic AI capability without making that shift are accumulating governance debt that will eventually surface as an incident, a regulatory finding, or a failure of customer or employee trust.</p>
+
+        <h2>What makes Agentic AI different</h2>
+
+        <p>A GenAI model, in most enterprise deployments, operates in what I would describe as an advisory mode. It receives a prompt, generates a response, and a human decides what to do with that response. The model can be wrong — and it frequently is — but the human is in the loop before any consequential action is taken. The governance requirement is essentially: ensure the output is reviewed before it is acted upon.</p>
+
+        <p>An Agentic AI system operates differently. It receives a goal or instruction and then plans and executes a sequence of steps to achieve it — calling APIs, querying databases, generating content, sending communications, or triggering downstream processes — without a human review step at each action. The human sets the objective; the agent determines and executes the path.</p>
+
+        <p>The capability value is significant. Agentic systems can compress multi-step processes that previously required hours of human attention into minutes of autonomous execution. In enterprise contexts — customer service, IT operations, procurement, compliance monitoring — the productivity gains from well-deployed Agentic AI are material.</p>
+
+        <p>But the risk profile is also materially different. When an Agentic system takes an incorrect action — or a correct action in the wrong context, or a technically correct action with unintended downstream consequences — the impact is not limited to a bad output that a human can choose not to act on. The action has already been taken. The API has been called, the record has been updated, the communication has been sent. Recovery requires understanding what was done, in what sequence, with what data, and with what downstream effects — and then undoing it, if it can be undone.</p>
+
+        <h2>The four governance gaps that appear in production</h2>
+
+        <p><strong>Observability.</strong> Most enterprise AI governance frameworks include logging requirements — keep a record of model inputs and outputs. For Agentic systems, input/output logging is necessary but not sufficient. What is required is action-level observability: a complete, auditable record of every action the agent took, every system it accessed, every decision point it encountered, and what it decided. Without this, post-incident analysis is guesswork, and demonstrating regulatory compliance is impossible.</p>
+
+        <p>Building this level of observability requires deliberate architectural choices at the point of system design, not retrospective instrumentation. The frameworks and tools for Agentic AI observability are maturing, but they are not yet mature — which means organisations deploying Agentic systems need to invest in this capability themselves rather than assuming the platform provides it.</p>
+
+        <p><strong>Boundary definition.</strong> What is the agent allowed to do? This question, which seems straightforward, is one of the most difficult to answer rigorously in a production Agentic deployment. The answer needs to be specific — not "the agent can access customer records" but "the agent can read customer records in system X for customers in states Y and Z, and can update fields A and B under conditions C and D." Every ambiguity in the boundary definition is a potential failure mode.</p>
+
+        <p>The challenge is that Agentic systems are often deployed precisely because the boundary of the task is not fully specified in advance — that is what makes them powerful. The governance requirement is to define the boundary of what the agent is authorised to do, even if the path it takes within that boundary is variable. This is a different kind of specification than most organisations are accustomed to writing.</p>
+
+        <p><strong>Escalation and override.</strong> When should an Agentic system stop and ask for human guidance? What triggers an escalation? Who receives it, and what do they have the authority to do? Most GenAI governance frameworks have a human review step built into the workflow. Agentic systems, by design, reduce or eliminate human review steps. That means the escalation triggers — the conditions under which the agent pauses and asks rather than acts — need to be explicitly designed, tested, and monitored.</p>
+
+        <p>The common failure mode is an escalation trigger that is either too sensitive (the agent escalates constantly, defeating the purpose of automation) or not sensitive enough (the agent acts in situations where it should have escalated, producing outcomes the organisation did not intend and cannot easily explain).</p>
+
+        <p><strong>Data access scoping.</strong> Agentic systems typically require broader data access than the discrete AI models they replace, because they need to gather context across multiple systems to plan and execute multi-step tasks. This access needs to be governed with the same rigour as any privileged system access — and in regulated industries, with the additional layer of data protection and privacy requirements that apply to personal or sensitive data.</p>
+
+        <p>The specific risk that emerges in Agentic deployments is data aggregation: an agent that has read access to multiple systems that individually contain non-sensitive data can, in the course of executing a task, aggregate information across those systems in ways that create a sensitive data profile. This is not a hypothetical risk. It is a consequence of how Agentic systems work, and it needs to be accounted for in the data governance design.</p>
+
+        <h2>What a production-ready governance framework looks like</h2>
+
+        <p>At Arth Group, I have been building the governance architecture for Agentic AI deployment from the ground up. The framework we have developed is structured around four requirements that any Agentic deployment needs to satisfy before it goes into production:</p>
+
+        <p>First, a complete action inventory — every action the agent can take, documented, reviewed, and approved before deployment. Not a category of actions, but specific actions: which systems, which operations, under which conditions.</p>
+
+        <p>Second, observable execution — full action-level logging from day one, with retention policies and access controls that satisfy the regulatory requirements relevant to the deployment context.</p>
+
+        <p>Third, tested escalation — defined escalation triggers that have been tested against scenarios where the right answer is to stop and ask, with clear ownership of who receives escalations and what authority they have to act.</p>
+
+        <p>Fourth, scoped data access — a data access model that gives the agent what it needs to execute its authorised tasks and nothing more, reviewed against the data protection requirements that apply to the data it handles.</p>
+
+        <p>None of these requirements is technically difficult to implement. What makes them challenging is that they require the organisation to be precise about things it has previously been approximate about — the scope of authorised actions, the conditions for human intervention, the data access model for autonomous systems. That precision is the work. The technology is the easier part.</p>
+
+        <h2>The window to get this right</h2>
+
+        <p>The organisations that build robust Agentic AI governance now, before they have a production incident or a regulatory finding, will have a significant advantage over those that build it in response to a problem. Not just because they will avoid the incident — but because the governance infrastructure they build is also the infrastructure that lets them deploy Agentic AI at scale with confidence. Organisations that are cautious about Agentic deployment because they do not trust their governance frameworks are leaving capability and productivity on the table.</p>
+
+        <p>The goal is not to slow down Agentic AI adoption. It is to build the foundations that make fast, confident adoption possible. Those foundations need to be built now, while the deployments are relatively small and the cost of getting the architecture right is modest. Retrofitting governance into a large-scale Agentic deployment that is already in production is significantly harder and more expensive than building it in from the start.</p>
+
+        <div class="article-bio">
+          <hr>
+          <p><strong>Abhishek Sinha</strong> is currently leading Agentic AI architecture and governance implementation at Arth Group. He has 30+ years of enterprise technology leadership across IBM, Kyndryl and HP. Available for CIO, SVP IT, GCC Head, and Board Technology Advisor roles globally. <a href="mailto:absinhablr@outlook.com">absinhablr@outlook.com</a> · <a href="https://www.linkedin.com/in/abhisheksinha-bgl" target="_blank">LinkedIn</a></p>
+        </div>
+        <a href="../articles.html" class="btn-text">← All Articles</a>
+      </div>
+    </div>
+  </main>
+  <footer class="footer">
+    <div class="footer-inner">
+      <div><div class="footer-name">Abhishek Sinha</div><div class="footer-sub">Technology Executive · CIO · GCC Head · Board Advisor</div></div>
+      <nav class="footer-nav">
+        <a href="mailto:absinhablr@outlook.com">absinhablr@outlook.com</a>
+        <a href="https://www.linkedin.com/in/abhisheksinha-bgl" target="_blank">LinkedIn</a>
+        <a href="../articles.html">Articles</a>
+        <a href="../about.html">About</a>
+      </nav>
+    </div>
+    <div class="footer-copy">© 2026 Abhishek Sinha</div>
+  </footer>
+</body>
+</html>

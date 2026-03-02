@@ -123,21 +123,16 @@ img { display: block; max-width: 100%; }
 .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
 
 /* ─── CREDENTIALS ──────────────────────────────────────────────────────────── */
-.credentials { background: var(--cream); border-bottom: 1px solid var(--cream-dk); }
-.cred-inner { max-width: var(--max-w); margin: 0 auto; padding: 2.2rem var(--pad);
-              display: flex; align-items: center; justify-content: center;
-              flex-wrap: wrap; gap: 0; }
-.cred-item { display: flex; flex-direction: column; align-items: center;
-             padding: 0.6rem 2.2rem; text-align: center; }
-.cred-val { font-family: var(--f-display); font-size: clamp(1.4rem, 3vw, 2rem);
-            font-weight: 700; color: var(--navy); line-height: 1; }
-.cred-lbl { font-family: var(--f-sans); font-size: 0.72rem; font-weight: 400;
-            color: var(--ink-lt); letter-spacing: 0.05em; margin-top: 0.3rem; text-transform: uppercase; }
-.cred-div { width: 1px; height: 40px; background: var(--rule); }
+
+
+
+
+
+
 @media (max-width: 600px) {
-  .cred-inner { gap: 1rem; }
-  .cred-div { display: none; }
-  .cred-item { padding: 0.4rem 1rem; }
+  
+  
+  
 }
 
 /* ─── FEATURED ──────────────────────────────────────────────────────────────── */
