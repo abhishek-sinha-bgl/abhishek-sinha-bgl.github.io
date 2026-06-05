@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="No proven AI playbook exists for CIOs in 2026. What does exist is a set of questions, constraints, and decision principles that hold up under honest scrutiny.">
+  <title>Navigating the AI Chaos: A CIO's Approach — Abhishek Sinha</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;1,8..60,300&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">Abhishek Sinha</a>
+      <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../articles.html" class="active">Articles</a></li>
+        <li><a href="../about.html#contact" class="nav-cta">Get in Touch</a></li>
+      </ul>
+      <button class="nav-toggle" aria-label="Menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">&#9776;</button>
+    </div>
+  </nav>
+
+  <div class="article-layout">
+    <div class="article-header">
+      <span class="tag">CIO Leadership</span>
+      <h1>Navigating the AI Chaos: What a CIO Actually Does With This</h1>
+      <div class="article-meta">
+        <span>June 2026</span>
+        <span>9 min read</span>
+      </div>
+      <p class="article-lede">The first article in this series laid out what the data actually says about AI project performance, AGI timelines, and agentic cost economics. This one addresses the harder question: given all that, what does a CIO do?</p>
+    </div>
+
+    <div class="article-body">
+
+      <div class="article-byline">
+        <strong>Abhishek Sinha</strong> — Global CTO, Arth Group · Former IBM, Kyndryl, HP
+      </div>
+
+      <p>The honest starting point is that no proven playbook exists. The consulting firms will tell you otherwise, and they will present case studies to support the claim. Read those case studies carefully. They tend to be drawn from the 20% of initiatives that succeeded, written by firms that ran the engagements, published in reports that are also marketing materials. The 80% that failed are not represented in the literature with the same frequency or the same detail.</p>
+
+      <p>This is not an argument for paralysis. AI is not going to stop developing, and organisations that build no capability now will find the gap harder to close later. It is an argument for a specific kind of discipline: knowing what you are trying to achieve, knowing what you need in place before you start, and being honest with yourself and your board about what you do not yet know.</p>
+
+      <p>What follows is not a strategy framework. It is an account of the decision approach I have found to hold up under pressure, drawn from running large-scale technology programmes and, more recently, from building AI governance architecture from the ground up.</p>
+
+      <h2>Start with where AI demonstrably works</h2>
+
+      <p>The current evidence base is clear enough to allow some honest conclusions about where enterprise AI is generating reliable value and where it is not.</p>
+
+      <p>AI demonstrably works in domains that are narrow, repetitive, data-rich, and measurable. Code generation and review, where the output can be automatically tested against objective criteria. Document processing and classification, where training data is abundant and error detection is feasible. Predictive maintenance in industrial contexts, where sensor data is clean and failure patterns are well-defined. Fraud detection in financial services, where signal quality is high and outcomes are quickly observable. Demand forecasting in supply chain, where the feedback loop is short enough to drive continuous model improvement.</p>
+
+      <p>What these domains share is not that they are simple. It is that success and failure are unambiguous, feedback is available at scale, and a human can verify the output without needing to reproduce the model's reasoning. The AI can be wrong without causing a catastrophic outcome, because the system is designed to catch errors before they propagate.</p>
+
+      <p>AI does not yet work reliably in domains that require generalised judgment, contextual reasoning across novel situations, or accountability for consequential decisions. The medical AI literature is instructive here. Deep learning has produced genuine advances in medical imaging for specific, bounded tasks: detecting certain anomalies in specific image types in controlled populations. It has not demonstrated the ability to replace a clinician's judgment in the full range of situations a patient presents. The striking achievements and the well-documented limitations coexist in the same systems, and the gap between research performance and safe, scalable real-world deployment remains significant.</p>
+
+      <p>A CIO who starts by mapping proposed AI use cases against this evidence base, rather than against vendor capability claims, will make better investment decisions. The question is not "can AI do this in a demo?" It is "does the published evidence show AI delivering reliable value in production deployments of this type, at this scale, in this kind of regulatory context?"</p>
+
+      <h2>Data readiness is the prior constraint</h2>
+
+      <p>I have run or overseen enough large technology programmes to have a clear view on this: the organisations that succeed with AI are almost always the ones that treated data infrastructure as the prior investment, not the concurrent one. Gartner's finding that 60% of AI projects without AI-ready data are abandoned is not a finding about AI. It is a finding about what happens when you try to build on foundations that are not there.</p>
+
+      <p>AI-ready data means several specific things. It means data that is accessible from the systems where it lives, which is frequently not the case in organisations with significant legacy infrastructure. It means data that is sufficiently complete and consistent for the intended purpose, which requires knowing what the intended purpose is before you assess the data against it. It means data with governance documentation sufficient to satisfy the regulatory requirements that apply to how you intend to use it. And it means data pipelines that can deliver the data to the AI system at the latency and volume the use case requires.</p>
+
+      <p>None of these conditions is exotic. They are the conditions that good data management programmes have been working toward for years. The AI project does not create them; it reveals whether they exist. If they do not, the right investment before the AI project is the data infrastructure investment. This is slower and less exciting than the AI project, and it is harder to get board approval for, because it does not have a demo. It is also more likely to produce a working AI system on the other side of it.</p>
+
+      <p>In practice, I ask three data questions before committing to any AI initiative. Where does the data live, and who controls access? What is the data quality assessment for the specific features the model will consume, not for the data estate in general? And what governance documentation exists for the data, sufficient to demonstrate that the intended use complies with the applicable regulatory requirements? If the answers to any of these are "we'll figure that out during the project," that is a signal the project is not ready to start.</p>
+
+      <h2>Govern as if the agent will act, not as if it will advise</h2>
+
+      <p>The governance model that works for a GenAI tool does not work for an agentic system. This distinction matters more than almost anything else in enterprise AI right now, and it is being systematically underestimated.</p>
+
+      <p>A GenAI tool in most enterprise deployments operates in advisory mode. It receives a prompt, generates a response, and a human decides what to do with that response. The governance requirement is review before action. An agentic system receives a goal and executes a sequence of steps to achieve it, across multiple systems, without a human review step at each action. The governance requirement is fundamentally different: you are governing an autonomous actor, not a generator of advice.</p>
+
+      <p>The organisations I have seen get into trouble with agentic deployments are not the ones that built inadequate AI models. They are the ones that built adequate AI models and inadequate governance. The model did what it was designed to do. The problem was that what the model was designed to do turned out, in edge cases that were not anticipated in the design, to produce outcomes the organisation did not intend and could not easily explain.</p>
+
+      <p>Governing an agentic system requires four things before it goes into production. A complete inventory of every action the agent is authorised to take, specific enough to be unambiguous at the system level. A full action-level audit log from day one, not input-output logging but a record of every decision point and every system accessed. Tested escalation triggers: defined conditions under which the agent stops and asks for human guidance, verified against scenarios where the right answer is to stop. And a scoped data access model that gives the agent exactly what it needs for its authorised tasks and nothing else.</p>
+
+      <p>None of this is technically difficult. What makes it hard is that it requires the organisation to be precise about things it has previously been approximate about. That precision is the governance work. It cannot be delegated to the vendor, and it cannot be deferred to after deployment.</p>
+
+      <h2>Manage vendors as parties with conflicts</h2>
+
+      <p>This is the part of the approach that is least often discussed, because it requires a degree of candour about the vendor relationship that most organisations find uncomfortable.</p>
+
+      <p>Your AI vendor has a commercial interest in the size and pace of your AI adoption. Your systems integrator has a commercial interest in the complexity and duration of your AI transformation programme. Your cloud provider has a commercial interest in your AI inference costs, which, as noted in the first article, now represent 85% of the enterprise AI budget and are rising. The research that each of these parties references to support their recommendations was frequently produced by organisations with comparable interests. This does not make their recommendations wrong. It makes them incomplete in predictable ways.</p>
+
+      <p>The practices that I have found useful in managing this: require vendors to provide reference customers you can call directly, not case studies they have written. Ask specifically about projects that did not succeed and what the vendor learned from them. Insist on outcome-based contract structures, not time-and-materials engagements, for any initiative where the outcome is sufficiently well-defined to be measurable. And commission independent technical review of any architecture recommendation that will create significant vendor lock-in before committing to it.</p>
+
+      <p>On the consulting conflict specifically: the research showing that 80% of AI projects fail is accurate, and the consulting firms that publish it are also, in many cases, the firms that ran the failed engagements. This does not mean you should not use large consulting firms for AI work. It means you should be clear about what you are buying. You are buying access to experience and methodology, not guaranteed outcomes. The firms that are willing to put a meaningful portion of their fee at risk against specific, measurable outcomes are worth more than the ones that are not. Very few are.</p>
+
+      <h2>Build the measurement infrastructure before the AI system</h2>
+
+      <p>The MIT finding that 95% of GenAI initiatives deliver zero measurable P&L impact is partly a measurement failure. Projects launched without agreed success metrics, without baselines, and without a plan to attribute outcomes to the AI system specifically cannot be evaluated at the end. The outcome is invisible, not necessarily zero.</p>
+
+      <p>Before committing budget to any AI initiative, I require three measurement commitments. A specific outcome metric that the CFO would accept as evidence of success, defined before the project starts. A baseline measurement of that metric in the current state, taken before the AI system is deployed. And an attribution plan: a credible account of how we will determine, at the end, how much of the change in the metric was caused by the AI system rather than by other things that changed at the same time.</p>
+
+      <p>This requirement kills some AI projects before they start, because it is not possible to define a credible success metric for them. That is useful information. A project that cannot define a success metric before it starts is a project where the value hypothesis has not been worked through sufficiently. Better to discover this before the budget is committed than after it is spent.</p>
+
+      <h2>Brief the board accurately</h2>
+
+      <p>The board pressure on CIOs to accelerate AI adoption is real and, in many cases, is based on a reading of the AI landscape that is more optimistic than the evidence warrants. Vendor briefings reach boards directly. The Harvard Business Review, the Financial Times, and the mainstream technology press carry the successful case studies more than the failures. Boards are not wrong to be interested in AI. They are frequently working from an incomplete picture.</p>
+
+      <p>The most valuable thing a CIO can do for a board in 2026 is give them an accurate picture. That means presenting the failure statistics alongside the success cases, and being specific about which conditions distinguish the two. It means naming the data infrastructure investments that have to precede the AI investments and making the case for them explicitly. It means being clear about the difference between what AI can do in a controlled demo and what it can do reliably in a production environment at the scale and in the regulatory context your organisation operates in.</p>
+
+      <p>It also means being honest about uncertainty. The expert disagreement on AGI timelines is genuine and significant. A CIO who briefs the board as if the trajectory of AI capability development is predictable is either not reading the research or is choosing not to share its complexity. The right posture for a board is one that acknowledges the uncertainty in the technology landscape, builds AI capability in domains where the evidence is clear, and avoids architecture decisions that create irreversible dependencies on capability advances not yet demonstrated in production.</p>
+
+      <p>That posture is harder to sell than a transformation narrative. It is also more likely to produce an AI programme that the board can still defend in eighteen months, when the next wave of vendor briefings arrives with a new set of promises.</p>
+
+      <div class="article-bio">
+        <hr>
+        <p><strong>Abhishek Sinha</strong> has 30+ years of enterprise technology leadership across IBM, Kyndryl, and HP. He is currently Global CTO at Arth Group and an independent researcher on AI evidence architecture and regulatory intelligence. Available for CIO, CTO, GCC Head, and Board Technology Advisor roles globally. <a href="mailto:absinhablr@outlook.com">absinhablr@outlook.com</a> · <a href="https://www.linkedin.com/in/abhishek-sinha-bgl" target="_blank">LinkedIn</a></p>
+        <p><em>Part 1 of this series: <a href="ai-briefing-vendor-wont-give-you.html">The AI briefing your vendor won't give you</a></em></p>
+      </div>
+
+      <a href="../articles.html" class="btn-text">← All Articles</a>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div><div class="footer-name">Abhishek Sinha</div><div class="footer-sub">Technology Executive · CIO · GCC Head · Board Advisor</div></div>
+      <nav class="footer-nav">
+        <a href="mailto:absinhablr@outlook.com">absinhablr@outlook.com</a>
+        <a href="https://www.linkedin.com/in/abhishek-sinha-bgl" target="_blank">LinkedIn</a>
+        <a href="../articles.html">Articles</a>
+        <a href="../about.html">About</a>
+      </nav>
+    </div>
+    <div class="footer-copy">© 2026 Abhishek Sinha</div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="The data on AI project failure, AGI timelines, and agentic cost economics that vendor briefings leave out. What a CIO actually needs to know in 2026.">
+  <title>The AI Briefing Your Vendor Won't Give You — Abhishek Sinha</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;1,8..60,300&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">Abhishek Sinha</a>
+      <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../articles.html" class="active">Articles</a></li>
+        <li><a href="../about.html#contact" class="nav-cta">Get in Touch</a></li>
+      </ul>
+      <button class="nav-toggle" aria-label="Menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">&#9776;</button>
+    </div>
+  </nav>
+
+  <div class="article-layout">
+    <div class="article-header">
+      <span class="tag">CIO Leadership</span>
+      <h1>The AI Briefing Your Vendor Won't Give You</h1>
+      <div class="article-meta">
+        <span>June 2026</span>
+        <span>10 min read</span>
+      </div>
+      <p class="article-lede">In 2026, the average enterprise CIO sits through more AI briefings than they can count. The data in those briefings is carefully selected. This article fills in what gets left out.</p>
+    </div>
+
+    <div class="article-body">
+
+      <div class="article-byline">
+        <strong>Abhishek Sinha</strong> — Global CTO, Arth Group · Former IBM, Kyndryl, HP
+      </div>
+
+      <p>The briefing format is by now familiar. A slide on AI's transformative potential, a set of client case studies showing double-digit productivity gains, a product roadmap with AGI somewhere in the middle distance, and a recommended engagement starting with a readiness assessment. The room leaves with a sense of urgency and a proposal to review.</p>
+
+      <p>I have sat in those rooms as a buyer, as a seller, and as an advisor. The briefings are not dishonest. But they are incomplete in ways that matter, and the gaps tend to cluster around the same three areas: how enterprise AI projects are actually performing, what the AGI timeline debate really looks like, and what agentic AI actually costs at scale. A CIO who makes budget decisions without a clear picture of all three is operating with insufficient information.</p>
+
+      <h2>What the failure data actually says</h2>
+
+      <p>The headline figures are real. RAND Corporation's analysis of 2,400+ enterprise AI initiatives found that 80.3% fail to deliver their intended business value. Of those failures, 33.8% are abandoned before reaching production, 28.4% reach completion but deliver nothing measurable, and 18.1% deliver some value but cannot justify the cost. MIT's Project NANDA, covering 300+ GenAI initiatives through 2025, found that 95% of organisations saw zero measurable return from generative AI by their strict definition of success: sustained productivity gains with documented P&L impact verified by both end users and executives.</p>
+
+      <p>S&P Global found that 42% of companies scrapped most of their AI initiatives in 2025 alone, up from 17% in 2024. The average large enterprise abandoned 2.3 AI initiatives in 2025 at an average sunk cost of $7.2 million each. These numbers have not improved meaningfully in three years of sustained investment.</p>
+
+      <p>Before you act on those figures, there are two things worth understanding about them.</p>
+
+      <p>The first is that most of the organisations publishing and amplifying these statistics have a commercial interest in doing so. McKinsey, Deloitte, PwC, EY, and KPMG collectively spent over $10 billion on AI initiatives since 2023. They also produce the research that CIOs rely on to justify AI budgets, and they sell the transformation engagements that follow from that research. This is not a conspiracy; it is a structural conflict of interest that is worth naming. When your AI strategy consultant tells you that 80% of AI projects fail and that the solution is a comprehensive AI readiness assessment, they are not wrong about the failure rate. They are, however, well positioned to benefit from your anxiety about it.</p>
+
+      <p>The second is that the MIT 95% figure measures a specific and demanding thing: zero measurable P&L impact by a rigorous, independently verified standard. It does not mean those projects were disasters in any straightforward sense. Some delivered workflow improvements that never got measured. Some informed later projects that did deliver value. Some were pilots that correctly concluded the use case was not viable and saved the organisation from a larger mistake. The number is sobering, but it should be read as a measurement of how rarely AI projects deliver clearly attributable financial outcomes, not as evidence that enterprise AI is uniformly failing.</p>
+
+      <p>The pattern underneath the numbers is more useful than the numbers themselves. Leadership issues drive 84% of failures: 73% of failed projects lacked clear executive alignment on success metrics, 68% underinvested in data governance, 56% lost active C-suite sponsorship within six months. Gartner's prediction that 60% of AI projects without AI-ready data will be abandoned through 2026 is already playing out. The technology is not the primary failure mode. The organisational conditions surrounding the technology are.</p>
+
+      <h2>The AGI timeline: who disagrees, and why it matters</h2>
+
+      <p>The vendor briefing version of AGI is generally optimistic and vague. AI capabilities are accelerating. Transformative systems are on the horizon. The organisations that build now will be positioned to capture the value when the next wave arrives. The implicit message is that the pace of capability development justifies urgency of adoption.</p>
+
+      <p>The actual expert picture is considerably more divided. An AIMultiple review of 9,800 predictions from AI scientists, entrepreneurs, and community forecasters in February 2026 found that technology CEOs and entrepreneurs place AGI between 2029 and 2032, framing it as an engineering challenge solvable with current approaches at sufficient scale. Academic researchers cluster around 2040 to 2050, highlighting unresolved theoretical problems in world-modelling, generalised reasoning, and memory that scaling alone may not address. These are not marginal positions at the edges of the debate. They represent the centre of gravity of two distinct communities who look at the same evidence and reach different conclusions.</p>
+
+      <p>Stanford's HAI Co-Director opened 2026 with a flat statement: there will be no AGI this year. Demis Hassabis at DeepMind, whose organisation has produced some of the most significant AI advances of the past decade, puts the probability of AGI by 2030 at roughly 50% and emphasises that scientific discovery and creative reasoning remain substantially unsolved. The Stanford 2026 AI Index confirms that top models keep improving on benchmarks, but benchmarks and real-world deployment performance remain poorly correlated, and the gap between research performance and safe, scalable implementation in complex environments is significant.</p>
+
+      <p>For a CIO, the practical implication is this: the trajectory of AI capability development does not currently tell you when to act on any specific use case. It tells you that the landscape will continue changing rapidly and that investments in specific vendor platforms carry meaningful lock-in risk. Vendor roadmaps that depend on capability advances not yet demonstrated in production should be treated as assumptions, not commitments.</p>
+
+      <p>There is also a historical pattern worth keeping in mind. Geoffrey Hinton predicted in 2016 that radiologists would be replaced by AI within five years. Radiology has not been automated, and hospitals need more radiologists now than they did then. AI has demonstrably improved radiological image analysis in specific, bounded tasks. It has not replaced the judgment of a radiologist working with a complex patient presentation. The gap between "AI can do task X in a controlled setting" and "AI can replace the professional who does task X in the full range of contexts they encounter" has consistently been larger than the optimistic projection suggested. That gap matters for workforce planning, for vendor claims about automation potential, and for any business case built on human replacement rather than human augmentation.</p>
+
+      <h2>The agentic cost reality</h2>
+
+      <p>Agentic AI is the current dominant theme in enterprise AI briefings. The capability story is genuinely compelling: systems that take a goal, plan a sequence of actions across multiple tools and data sources, and execute without requiring a human at each step. The productivity potential in the right contexts is real. The cost structure is not what the business cases assumed.</p>
+
+      <p>EY's analysis of enterprise AI cost structures puts the comparison starkly. In 2023, a simple AI workflow, input, retrieval, response, cost roughly $0.04 per interaction. In 2026, a more complex agentic system involving tools, reasoning steps, and iterative loops costs approximately $1.20 per interaction. That is a 30-fold increase. A workflow that costs $0.15 per execution at prototype scale costs $75,000 per day at 500,000 daily requests. Business cases built on per-interaction costs from 2023 pilot deployments are not valid for 2026 production scale.</p>
+
+      <p>The structural reason is straightforward. In agentic sessions, input tokens outnumber output tokens by 20 to 25 times, because the agent accumulates context across every step of its execution. Most AI cost discussions focus on output token pricing, where the sticker prices are most visible. In agentic workloads, it is input token volume that drives the bill, and that volume grows with every turn in the agent's reasoning chain. By turn 50 of a complex task, the context window is approaching its limit and the cost per session has compounded significantly.</p>
+
+      <p>AI inference cost now represents 85% of the enterprise AI budget, according to AnalyticsWeek's 2026 Inference Economics report, up from a fraction of that in 2023. Per-token costs are falling and will continue to fall; Gartner forecasts a 90% reduction in frontier model inference costs by 2030. But total enterprise AI inference spend is rising faster than unit costs are falling, because the number of interactions and the complexity of each interaction are both increasing. Both things are true simultaneously, and both belong in a business case.</p>
+
+      <p>The other agentic cost the briefing deck rarely covers is what researchers are calling the Unreliability Tax. Agentic systems introduce probabilistic uncertainty into workflows that were previously deterministic. The same input can produce different execution paths on different runs. Building the observability infrastructure to catch failures, the testing frameworks to validate behaviour across edge cases, and the human escalation pathways for situations the agent handles incorrectly all carry costs that do not appear in a token price calculation. For organisations in regulated industries, the audit and compliance infrastructure required to deploy agentic systems appropriately is a further cost that is rarely quantified in the initial business case.</p>
+
+      <h2>The question the briefing does not ask</h2>
+
+      <p>Most AI briefings open by asking where AI can create value in your organisation. That is the right question eventually. It is not the right first question.</p>
+
+      <p>The first question is whether your data is in a condition to support the AI use case being proposed. Gartner's finding that 60% of AI projects without AI-ready data are abandoned is not a finding about AI. It is a finding about data infrastructure. The models work. The data they need to work on is frequently incomplete, ungoverned, inaccessible across systems, or formatted in ways that make it unusable for the intended purpose. An AI vendor cannot fix this for you. A readiness assessment will identify it. But identifying a data readiness problem and solving a data readiness problem are different things, and solving it takes time and organisational investment that needs to be in the budget before the AI project starts, not discovered during it.</p>
+
+      <p>The second question is what success looks like in terms your CFO will accept as evidence. The MIT finding that 95% of GenAI initiatives deliver zero measurable P&L impact is partly a measurement failure: organisations launched projects without defining, in advance, what measurable outcome would constitute success. When the project ends, there is no baseline, no control group, and no agreed metric, so the outcome cannot be assessed with any rigour. The consultants call this a lack of clear success metrics. The underlying problem is that the business case was built on outcomes the organisation did not have a credible plan to measure.</p>
+
+      <p>The third question is who owns this when it goes wrong. Not who is responsible for delivery, but who is accountable for the outcome if the system behaves in a way that causes a problem. In agentic deployments, this question is no longer hypothetical. When an agent takes an incorrect action across a production system, the accountability question surfaces immediately. If you do not have a clear answer before deployment, you will be inventing one under pressure after an incident.</p>
+
+      <p>None of these questions appear in the standard vendor briefing. They are not comfortable questions to ask in a room full of people who have a proposal to present. They are, however, the questions that separate AI investments that deliver from AI investments that add to the failure statistics.</p>
+
+      <div class="article-bio">
+        <hr>
+        <p><strong>Abhishek Sinha</strong> has 30+ years of enterprise technology leadership across IBM, Kyndryl, and HP. He is currently Global CTO at Arth Group and an independent researcher on AI evidence architecture and regulatory intelligence. Available for CIO, CTO, GCC Head, and Board Technology Advisor roles globally. <a href="mailto:absinhablr@outlook.com">absinhablr@outlook.com</a> · <a href="https://www.linkedin.com/in/abhishek-sinha-bgl" target="_blank">LinkedIn</a></p>
+        <p><em>Part 2 of this series: <a href="navigating-ai-chaos-cio-approach.html">What a CIO actually does with this</a></em></p>
+      </div>
+
+      <div class="article-sources-block">
+        <p><strong>Sources</strong> RAND Corporation analysis of 2,400+ enterprise AI initiatives (2025). MIT Project NANDA GenAI initiative study, 300+ organisations (July 2025). S&P Global Market Intelligence AI adoption survey (2025). Gartner AI project abandonment predictions (2024-2026). AIMultiple analysis of 9,800 AGI timeline predictions (February 2026). Stanford HAI 2026 AI Index (April 2026). Stanford AI expert predictions for 2026 (December 2025). EY agentic AI cost analysis (June 2026). AnalyticsWeek 2026 Inference Economics report. McKinsey Global AI Survey 2026.</p>
+      </div>
+
+      <a href="../articles.html" class="btn-text">← All Articles</a>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div><div class="footer-name">Abhishek Sinha</div><div class="footer-sub">Technology Executive · CIO · GCC Head · Board Advisor</div></div>
+      <nav class="footer-nav">
+        <a href="mailto:absinhablr@outlook.com">absinhablr@outlook.com</a>
+        <a href="https://www.linkedin.com/in/abhishek-sinha-bgl" target="_blank">LinkedIn</a>
+        <a href="../articles.html">Articles</a>
+        <a href="../about.html">About</a>
+      </nav>
+    </div>
+    <div class="footer-copy">© 2026 Abhishek Sinha</div>
+  </footer>
+
+</body>
+</html>
