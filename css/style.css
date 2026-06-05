@@ -294,3 +294,13 @@ img { display: block; max-width: 100%; }
               border-bottom: 1px solid var(--teal); padding-bottom: 1px;
               text-decoration: none; display: inline-block; margin-top: 0.5rem; }
 .latest-all:hover { color: var(--navy); border-color: var(--navy); }
+
+/* Featured + Latest side-by-side layout */
+.feat-main-wrap { display: flex; flex-direction: column; }
+.feat-main-wrap .section-kicker { margin-bottom: 1.2rem; }
+.feat-side .section-kicker { margin-bottom: 1.2rem; }
+.feat-side .latest-all { display: inline-block; font-family: var(--f-sans);
+  font-size: 0.82rem; font-weight: 500; color: var(--teal); letter-spacing: 0.04em;
+  border-bottom: 1px solid var(--teal); padding-bottom: 1px;
+  text-decoration: none; margin-top: 1rem; }
+.feat-side .latest-all:hover { color: var(--navy); border-color: var(--navy); }
