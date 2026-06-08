@@ -1,0 +1,2 @@
+User-agent: *
+Sitemap: https://abhishek-sinha-bgl.github.io/sitemap.xml
