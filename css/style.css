@@ -102,25 +102,45 @@ img { display: block; max-width: 100%; }
 }
 
 /* ─── HERO ─────────────────────────────────────────────────────────────────── */
-.hero { background: var(--navy); padding: clamp(4rem, 10vw, 8rem) 0 clamp(3.5rem, 8vw, 6rem);
+.hero { background: var(--navy); padding: clamp(2.5rem, 6vw, 4.5rem) 0 clamp(2rem, 5vw, 3.5rem);
         position: relative; overflow: hidden; }
 .hero::before { content: ''; position: absolute; top: -60px; right: -80px;
                 width: 520px; height: 520px; border-radius: 50%;
                 background: radial-gradient(circle, rgba(26,107,138,0.18) 0%, transparent 70%);
                 pointer-events: none; }
-.hero-inner { max-width: var(--max-w); margin: 0 auto; padding: 0 var(--pad);
-              max-width: 760px; }
+.hero-inner { max-width: var(--max-w); margin: 0 auto; padding: 0 var(--pad); }
+.hero-grid { display: grid; grid-template-columns: 1fr 300px; gap: 4rem; align-items: center; }
 .hero-eyebrow { font-family: var(--f-sans); font-size: 0.78rem; font-weight: 400;
                 letter-spacing: 0.18em; text-transform: uppercase; color: var(--teal-lt);
-                margin-bottom: 1.4rem; }
-.hero-title { font-family: var(--f-display); font-size: clamp(2.4rem, 6vw, 4.2rem);
+                margin-bottom: 1.2rem; }
+.hero-title { font-family: var(--f-display); font-size: clamp(2rem, 4.5vw, 3.2rem);
               font-weight: 700; color: var(--white); line-height: 1.1;
-              letter-spacing: -0.02em; margin-bottom: 1.6rem; }
+              letter-spacing: -0.02em; margin-bottom: 1.2rem; }
 .hero-title em { font-style: italic; color: #A8C8D8; font-weight: 400; }
-.hero-sub { font-family: var(--f-serif); font-size: clamp(1rem, 2vw, 1.15rem);
-            color: rgba(255,255,255,0.72); line-height: 1.75; margin-bottom: 2.4rem;
-            max-width: 600px; font-weight: 300; }
+.hero-sub { font-family: var(--f-serif); font-size: clamp(0.92rem, 1.6vw, 1.02rem);
+            color: rgba(255,255,255,0.72); line-height: 1.75; margin-bottom: 2rem;
+            font-weight: 300; }
 .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+/* Hero credential card */
+.hero-card { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12);
+             border-top: 2px solid var(--teal-lt); padding: 1.5rem; border-radius: 2px; }
+.hc-label { font-family: var(--f-sans); font-size: 0.65rem; font-weight: 500;
+            letter-spacing: 0.14em; text-transform: uppercase; color: var(--teal-lt);
+            margin-bottom: 0.4rem; }
+.hc-role { font-family: var(--f-sans); font-size: 0.83rem; color: rgba(255,255,255,0.85);
+           font-weight: 400; margin-bottom: 0.2rem; line-height: 1.5; }
+.hc-rule { border: none; border-top: 1px solid rgba(255,255,255,0.1); margin: 0.9rem 0; }
+.hc-topics { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.5rem; }
+.hc-topics span { font-family: var(--f-sans); font-size: 0.7rem; font-weight: 400;
+                  color: rgba(255,255,255,0.6); background: rgba(255,255,255,0.08);
+                  border: 1px solid rgba(255,255,255,0.12); padding: 0.2rem 0.55rem;
+                  border-radius: 2px; }
+
+@media (max-width: 860px) {
+  .hero-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .hero-right { display: none; }
+}
 
 /* ─── CREDENTIALS ──────────────────────────────────────────────────────────── */
 
