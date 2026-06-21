@@ -108,8 +108,10 @@ img { display: block; max-width: 100%; }
                 width: 520px; height: 520px; border-radius: 50%;
                 background: radial-gradient(circle, rgba(26,107,138,0.18) 0%, transparent 70%);
                 pointer-events: none; }
-.hero-inner { max-width: var(--max-w); margin: 0 auto; padding: 0 var(--pad); }
-.hero-grid { display: grid; grid-template-columns: 1fr 300px; gap: 4rem; align-items: start; padding-top: 0.5rem; }
+.hero-inner { width: 100%; padding: 0; }
+.hero-grid { display: grid; grid-template-columns: 1fr 320px; align-items: start; padding-top: 0.5rem; }
+.hero-left { max-width: 1140px; padding: 0 2.5rem 0 clamp(1.25rem, 4vw, 2.5rem); margin-left: auto; }
+.hero-right { background: rgba(0,0,0,0.15); padding: clamp(1.5rem, 3vw, 2rem) clamp(1.5rem, 3vw, 2rem); align-self: stretch; display: flex; align-items: flex-start; }
 .hero-eyebrow { font-family: var(--f-sans); font-size: 0.78rem; font-weight: 400;
                 letter-spacing: 0.18em; text-transform: uppercase; color: var(--teal-lt);
                 margin-bottom: 1rem; }
@@ -135,7 +137,8 @@ img { display: block; max-width: 100%; }
 
 /* Hero credential card */
 .hero-card { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12);
-             border-top: 2px solid var(--teal-lt); padding: 1.5rem; border-radius: 2px; }
+             border-top: 2px solid var(--teal-lt); padding: 1.5rem; border-radius: 0;
+             width: 100%; }
 .hc-label { font-family: var(--f-sans); font-size: 0.65rem; font-weight: 500;
             letter-spacing: 0.14em; text-transform: uppercase; color: var(--teal-lt);
             margin-bottom: 0.4rem; }
@@ -149,7 +152,8 @@ img { display: block; max-width: 100%; }
                   border-radius: 2px; }
 
 @media (max-width: 860px) {
-  .hero-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .hero-grid { grid-template-columns: 1fr; }
+  .hero-left { padding: 0 var(--pad); margin-left: 0; max-width: 100%; }
   .hero-right { display: none; }
 }
 
@@ -167,7 +171,7 @@ img { display: block; max-width: 100%; }
 }
 
 /* ─── FEATURED ──────────────────────────────────────────────────────────────── */
-.featured-section { padding: clamp(3.5rem, 8vw, 6rem) 0; border-bottom: 1px solid var(--cream-dk); }
+.featured-section { padding: clamp(1.5rem, 3vw, 2.5rem) 0; border-bottom: 1px solid var(--cream-dk); }
 .featured-grid { display: grid; grid-template-columns: 1fr 380px; gap: 4rem; align-items: start; }
 .feat-main a { display: block; }
 .feat-main a:hover h2 { color: var(--teal); }
