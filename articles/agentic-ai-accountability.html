@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Agentic AI systems take actions with real-world consequences. When something goes wrong, the accountability question is not theoretical. Most organisations have not answered it.">
+  <title>Who Is Accountable When the Agent Makes the Wrong Call — Abhishek Sinha</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;1,8..60,300&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">Abhishek Sinha</a>
+      <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../about.html#research">Research</a></li>
+        <li><a href="../articles.html" class="active">Articles</a></li>
+        <li><a href="../about.html#contact" class="nav-cta">Get in Touch</a></li>
+      </ul>
+      <button class="nav-toggle" aria-label="Menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">&#9776;</button>
+    </div>
+  </nav>
+
+  <div class="article-layout">
+    <div class="article-header">
+      <span class="tag">Agentic AI in Production</span>
+      <h1>Who Is Accountable When the Agent Makes the Wrong Call</h1>
+      <div class="meta"><span>June 2026</span><span>9 min read</span></div>
+      <p class="lede">Agentic AI systems take actions with real-world consequences -- they call APIs, update records, send communications, execute transactions. When something goes wrong, the accountability question is not theoretical. Most organisations have not answered it.</p>
+    </div>
+
+    <div class="article-body">
+
+      <p>The accountability question for AI has been discussed for years at a level of abstraction that has made it easy to defer. When AI systems produced outputs -- text, images, recommendations -- the human who acted on those outputs remained accountable for the action. The AI was a tool. The decision remained human.</p>
+
+      <p>Agentic AI changes that in a way that most organisations are not yet governing correctly. An agentic system does not produce an output for a human to consider. It takes an action. The API has been called, the record updated, the message sent, the transaction initiated -- before any human has reviewed what happened. The question of who is accountable for that action is no longer an abstraction about future AI risk. It is a live operational question for any organisation running agentic systems today.</p>
+
+      <h2>What makes agentic accountability different</h2>
+
+      <p>With conventional AI, the failure mode is a bad recommendation. The human acts on it, and accountability for the action sits with the human. Remediation is possible because the human decision is the intervention point.</p>
+
+      <p>With agentic AI, the failure mode is a bad action. There is no human intervention point between the agent's decision and the consequence. Recovery requires understanding what the agent did, in what sequence, under what conditions, with what data, and with what downstream effects -- and then determining whether the action can be undone, partially reversed, or only documented. In many cases, it cannot be undone. A communication sent to a customer, a regulatory filing submitted, a financial transaction settled -- these are not reversible in the way that a bad recommendation can be simply not acted upon.</p>
+
+      <p>The accountability gap this creates is structural. Someone approved the deployment of the agentic system. Someone defined its objectives and constraints. Someone integrated it with the systems it operates against. Someone is responsible for monitoring its behaviour. But when a specific wrong action occurs, the chain from deployment decision to operational consequence is rarely documented in a way that enables accountability to be clearly assigned.</p>
+
+      <h2>The three accountability gaps I see most often</h2>
+
+      <p>The first is the deployment gap. Agentic systems are frequently deployed through technology or transformation programmes that do not carry clear operational accountability forward. The team that built and deployed the system has moved on to the next project. The team that operates the system did not design it and does not have full visibility into its decision logic. When something goes wrong, there is no single owner.</p>
+
+      <p>The second is the scope gap. Agentic systems are typically deployed with a defined objective and a set of constraints on what they can do. In practice, the constraints are often underspecified, and the systems find paths to their objectives that were not anticipated. This is not a failure of the AI in the technical sense -- it is behaving consistently with its instructions. But the organisation did not intend or anticipate the action it took. The question of who is accountable for actions that are consistent with instructions but inconsistent with intent is genuinely difficult and most organisations have not worked through it.</p>
+
+      <p>The third is the audit gap. Accountability after the fact requires the ability to reconstruct what happened. Most agentic deployments do not have logging and traceability sufficient for that reconstruction. The system took an action. The action had consequences. The decision path that led to the action is not recorded in a form that enables post-hoc review. Without that record, accountability is asserted rather than demonstrated.</p>
+
+      <h2>What the regulatory environment is beginning to require</h2>
+
+      <p>The EU AI Act addresses human oversight in terms that are clear in principle but challenging in practice for agentic systems. The requirement is for human oversight mechanisms that are "genuinely operative" -- not theoretical controls that exist in documentation but have no practical effect on system behaviour. For a system taking dozens of actions per minute, the question of what "genuinely operative" oversight looks like is one that organisations must answer in their architecture before regulators answer it for them.</p>
+
+      <p>The emerging regulatory direction across jurisdictions is toward a traceability requirement: the ability to reconstruct, for any action taken by an AI system, the decision path, the data inputs, the objectives being optimised, and the constraints in effect at the time. This is the technical foundation for accountability. It is also the technical requirement that most current agentic deployments cannot meet.</p>
+
+      <p>Product liability frameworks are also evolving. Several EU member states are actively working through how existing product liability law applies to AI-caused harm. The direction is toward treating AI systems deployed by enterprises as products for which the deploying enterprise bears liability -- which means the absence of traceability documentation is not just an audit problem. It is a legal exposure.</p>
+
+      <h2>Building accountable agentic architecture</h2>
+
+      <p>The starting point is what I would call a decision log with integrity. Every action taken by an agentic system should be logged with sufficient context to reconstruct the decision: the objective being pursued, the state of the environment at the time of the decision, the constraints in effect, the data inputs consulted, and the action selected. This log should be tamper-evident and retained for a period appropriate to the risk profile of the actions being taken.</p>
+
+      <p>This is not exotic technical infrastructure. It is a discipline of design. The organisations that have built it have done so because they understood from the outset that agentic systems operating at scale in consequential domains require the same audit infrastructure that any other consequential operational system requires. The organisations that have not built it typically deployed agentic capability quickly, under competitive pressure, without asking what responsible deployment required.</p>
+
+      <p>The second element is explicit scope definition with a human review gate for scope extension. The constraints on what an agentic system can do should be documented, version-controlled, and subject to approval when they change. When the system encounters a situation outside its defined scope, the default behaviour should be to halt and escalate rather than to find the closest available action within its capability. Most current deployments do not have this architecture. The default behaviour when the agent is uncertain is typically to continue rather than to pause.</p>
+
+      <p>The third element is named accountability. For each agentic system in production, there should be a named individual accountable for its operational behaviour -- not the team that built it, not the vendor that supplies the model, but a named person with operational responsibility for what the system does and the authority to intervene or halt it. That accountability should be documented, reviewed periodically, and carried forward when the system changes or when organisational responsibility shifts.</p>
+
+      <h2>The board and senior leadership dimension</h2>
+
+      <p>The accountability question for agentic AI ultimately reaches the board because the decisions that determine whether an organisation is exposed were made at the deployment level, but the consequences of that exposure reach the organisation at the level the board is responsible for.</p>
+
+      <p>A regulatory finding against an agentic system that was deployed without adequate oversight architecture is not primarily a technology failure. It is a governance failure. The organisation approved deployment. The organisation is responsible for what it deployed.</p>
+
+      <p>The conversation I would encourage senior leaders to have is not "do we have AI governance policies?" -- most organisations do. It is "for each agentic system we are running, can we reconstruct any action it has taken in the past twelve months, and is there a named person accountable for that system's behaviour?" If the answer to either question is no, the governance posture is not adequate, whatever the policy documentation says.</p>
+
+      <p>The organisations that will navigate the agentic AI transition well are those that treat accountability as an architectural requirement, not a retrospective assignment. The decision log, the scope constraint, the named owner -- these are not bureaucratic additions to an agentic deployment. They are what makes the deployment responsible. The cost of building them in is low relative to the cost of reconstructing accountability after something has gone wrong in a way that cannot be undone.</p>
+
+    </div>
+
+    <div class="article-back">
+      <a href="../articles.html" class="btn-text">← All Articles</a>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-name">Abhishek Sinha</div>
+        <div class="footer-sub">Technology Executive · CTO · CIO · Board Advisor</div>
+      </div>
+      <nav class="footer-nav">
+        <a href="https://epistamate.com/index.html#contact" target="_blank">Get in touch</a>
+        <a href="https://www.linkedin.com/in/abhishek-sinha-bgl" target="_blank">LinkedIn</a>
+        <a href="../articles.html">Articles</a>
+        <a href="../about.html">About</a>
+      </nav>
+    </div>
+    <div class="footer-copy">© 2026 Abhishek Sinha</div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>
