@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Most boards are approving AI deployments without knowing which of those systems are legally classified as high-risk. That gap is now a governance failure with enforcement consequences.">
+  <title>The Board Doesn't Know What a High-Risk AI System Is — Abhishek Sinha</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;1,8..60,300&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">Abhishek Sinha</a>
+      <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../about.html#research">Research</a></li>
+        <li><a href="../articles.html" class="active">Articles</a></li>
+        <li><a href="../about.html#contact" class="nav-cta">Get in Touch</a></li>
+      </ul>
+      <button class="nav-toggle" aria-label="Menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">&#9776;</button>
+    </div>
+  </nav>
+
+  <div class="article-layout">
+    <div class="article-header">
+      <span class="tag">AI Governance</span>
+      <h1>The Board Doesn't Know What a High-Risk AI System Is</h1>
+      <div class="meta"><span>June 2026</span><span>8 min read</span></div>
+      <p class="lede">Most boards are approving AI deployments without knowing which of those systems are legally classified as high-risk under the EU AI Act. That gap is no longer an oversight. It is a governance failure with enforcement consequences.</p>
+    </div>
+
+    <div class="article-body">
+
+      <p>In my experience, the AI conversation in most boardrooms follows a familiar pattern. A slide on AI initiatives. A slide on the competitive landscape. A slide on investment required. Occasionally a slide on risk, which tends to focus on reputational exposure or data privacy rather than the specific legal classification of the systems being deployed.</p>
+
+      <p>What I rarely see is the question that now matters most: which of the AI systems we have approved or are about to approve are classified as high-risk under the EU AI Act, and what does that classification require us to do before we can legally deploy them?</p>
+
+      <p>The date most people have circled for this, August 2, 2026, is no longer the trigger for Annex III obligations. Under the Digital Omnibus on AI, agreed by the Council and Parliament in May 2026 and confirmed through formal adoption in the weeks since, the application date for standalone Annex III high-risk obligations has moved to December 2, 2027. That is genuine breathing room. It is also, I think, the wrong thing for a board to take comfort from. The classification and remediation work the Act requires does not get shorter because the deadline moved further out, and the systems already live in most organisations are not automatically exempt just because the calendar changed.</p>
+
+      <p>August 2, 2026 is not off the calendar altogether, and boards should not treat it as one deadline that moved wholesale. Most of the Act's Article 50 transparency obligations -- the requirement to disclose that a person is interacting with an AI system, and to label AI-generated content -- stay on their original schedule. The one piece that shifted is the watermarking requirement for generative systems already on the market, which gets its own separate extension to December 2, 2026. A board briefed only on the Annex III delay is working from an incomplete picture of what is actually due this year.</p>
+
+      <p>There is a grandfathering provision that matters here. Systems already on the market before the applicable date are not subject to the full high-risk obligations unless they undergo a significant design change after that date. For many boards, that sounds like relief -- the recruitment tool and the performance management system that have been running for two years are, for now, outside the regulation's reach. The complication is that the Commission has not yet defined what counts as a significant change, and the examples under discussion -- retraining on new data, material parameter updates, extending a system's scope -- are exactly the kind of routine maintenance most AI systems undergo as a matter of course. A board that assumes its grandfathered systems will stay grandfathered through 2027 is relying on a definition nobody at the Commission has confirmed yet.</p>
+
+      <h2>What high-risk actually means</h2>
+
+      <p>The EU AI Act's Annex III defines high-risk AI systems by use case, not by technology. The classification does not depend on how sophisticated the system is, what model it runs on, or whether it was built internally or procured from a vendor. It depends on what the system is used for and in what context.</p>
+
+      <p>That classification is also not automatic. Article 6(3) allows a system that falls within an Annex III category to avoid high-risk status if it performs a narrow procedural task, refines the outcome of a decision a human has already made, or does purely preparatory work that does not materially affect the outcome. Providers relying on this exemption still have to register the system and be able to justify the exemption if a regulator asks. The filter is real, but it shifts the board's question from whether a system falls under Annex III to whether the organisation can demonstrate why it does not, which is not obviously an easier question to answer.</p>
+
+      <p>High-risk use cases under Annex III include AI systems used in: employment and worker management decisions (including recruitment screening, performance evaluation, and promotion or termination decisions); access to essential private and public services, including credit scoring; administration of justice and democratic processes; law enforcement; border control; education and vocational training; management and operation of critical infrastructure.</p>
+
+      <p>Most large enterprises, when they conduct an honest inventory, find they have more Annex III systems than they expected. A recruitment AI that screens CVs. A performance management tool that uses algorithmic scoring. A credit risk model in a financial services subsidiary. A system that determines eligibility for benefits or services. These are not edge cases -- they are standard enterprise deployments, many of which have been live for years and may currently benefit from the Act's grandfathering provisions. That protection is conditional, not permanent, and it depends on a definition of "significant change" the Commission has not yet finalised. Boards that have not inventoried these systems do not know which side of that line they are on -- which is arguably a more urgent problem than a fixed deadline, because the answer can change without anyone deciding to change it.</p>
+
+      <p>The board's job is to know that these systems exist, that they carry legal obligations under the Act, and that those obligations are being met. In most cases, that conversation has not happened.</p>
+
+      <h2>Why the board conversation has not happened</h2>
+
+      <p>Part of the reason is structural. AI governance has been treated as a function of the legal or compliance team, which produces documentation that rarely reaches the board in a form that enables meaningful oversight. The board receives assurance that compliance is being managed. It does not receive the information it would need to challenge that assurance.</p>
+
+      <p>Part of the reason is definitional. "High-risk AI system" sounds like it means a dangerous or unreliable AI. It does not. It means an AI system deployed in a context that the legislator has determined creates significant risk to the fundamental rights and safety of affected individuals. An organisation can have a highly reliable, well-tested AI system that is nonetheless legally classified as high-risk because of what it does, not how well it does it. Boards that understand risk primarily as performance risk have not been well served by the framing.</p>
+
+      <p>Part of the reason is velocity. The pace of AI deployment over the past two years has outrun the governance cadence that boards are accustomed to. Projects that in an earlier era would have come to the board for investment approval went through technology or transformation budgets at a level that did not trigger board-level scrutiny. Some of those projects are now live Annex III systems.</p>
+
+      <h2>What the Act requires of high-risk systems</h2>
+
+      <p>For each high-risk AI system, the Act requires a conformity assessment before deployment, a risk management system maintained throughout the system's lifecycle, data governance procedures covering training and testing data with explicit bias detection requirements, technical documentation sufficient to demonstrate conformity, logging and traceability capable of post-deployment audit, transparency to affected individuals, genuinely operative human oversight mechanisms, and measurable accuracy and robustness standards.</p>
+
+      <p>None of these can be delivered retrospectively without significant effort. Logging and traceability in particular cannot be retrofitted to most current deployments without architectural redesign. A system that has been live for two years without conformity-grade logging may currently be shielded by grandfathering, but that shield disappears the moment the system is judged to have undergone a significant change, and retrofitting the architecture at that point is materially harder than building it in from the start.</p>
+
+      <p>The board-level implication is that AI deployment decisions made without reference to Annex III classification created technical debt that now has a regulatory dimension. The question is not whether that debt exists -- in most cases it does -- but whether the organisation has a plan to address it and whether the board has visibility into that plan.</p>
+
+      <h2>Three questions a board should be asking</h2>
+
+      <p>The first is the inventory question: do we have a complete, classified inventory of AI systems in deployment across the organisation, including those procured from vendors, those built internally, and those running in subsidiaries or acquired entities? Most organisations cannot answer yes. The inventory that exists was typically built for a different purpose and does not map cleanly to Annex III categories.</p>
+
+      <p>The second is the architecture question: for each system identified as high-risk, has the architecture been assessed against the Act's requirements, and what is the gap? This is a technical question, but the board needs a summary answer. Systems that lack conformity-grade logging, that have no documented risk management system, or that cannot demonstrate meaningful human oversight are exposed regardless of what the compliance documentation says.</p>
+
+      <p>The third is the accountability question: who is responsible for the conformity of each high-risk system, and how is that accountability reported to the board? This is different from asking who owns the legal review. It is asking who is accountable for the technical and operational state of the system against its regulatory obligations, and how that person reports to the board when the answer is not satisfactory.</p>
+
+      <p>These are not comfortable questions. They will frequently surface gaps. But the gap surfaced in a board conversation is manageable. The gap surfaced by a regulator is not.</p>
+
+      <h2>What responsible board oversight looks like</h2>
+
+      <p>It does not require the board to become technically expert in AI systems. It requires the board to receive information in a form that enables genuine oversight rather than passive assurance.</p>
+
+      <p>That means an AI inventory presented to the board with Annex III classification -- not just a list of AI initiatives, but a classification of each against the risk framework with an assessment of current conformity status. It means a standing agenda item for high-risk AI system governance, not an annual review. It means the board asking, for each material AI investment decision, whether the system under discussion is Annex III classified and what the conformity plan is before approval -- not after deployment.</p>
+
+      <p>Organisations that get this right will find that the discipline it requires produces better AI governance outcomes generally, not just regulatory compliance. The process of classifying systems, mapping architectural requirements, and assigning accountable owners surfaces exactly the kind of technical debt and governance gaps that create operational and reputational risk independent of regulatory exposure.</p>
+
+      <p>The original August 2026 deadline concentrated board attention on compliance in a way the revised timeline may not. The more durable argument is that the governance posture the Act requires is the governance posture that responsible AI deployment requires in any case, regardless of which December or August the enforcement date eventually lands on.</p>
+
+      <p>One dimension boards frequently miss is that the AI tools being used to research compliance obligations have their own reliability gap: most do not distinguish between binding regulations and voluntary guidance, which produces briefs that are wrong about what the organisation is legally required to do. That specific problem -- <a href="https://epistamate.com/blog/binding-law-vs-non-binding-guidance.html" target="_blank" rel="noopener">how AI research tools collapse the binding vs non-binding distinction</a> -- is relevant reading for any team building a compliance programme on AI-assisted research.</p>
+
+    <div class="article-back">
+      <a href="../articles.html" class="btn-text">← All Articles</a>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-name">Abhishek Sinha</div>
+        <div class="footer-sub">Technology Executive · CTO · CIO · Board Advisor</div>
+      </div>
+      <nav class="footer-nav">
+        <a href="https://epistamate.com/index.html#contact" target="_blank">Get in touch</a>
+        <a href="https://www.linkedin.com/in/abhishek-sinha-bgl" target="_blank">LinkedIn</a>
+        <a href="../articles.html">Articles</a>
+        <a href="../about.html">About</a>
+      </nav>
+    </div>
+    <div class="footer-copy">© 2026 Abhishek Sinha</div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>
