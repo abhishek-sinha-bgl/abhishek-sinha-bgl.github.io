@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="The Digital Omnibus moved the EU AI Act's highest-stakes deadline by sixteen months. It left the transparency obligations, and a newly active enforcement power, exactly where they were. What your board needs to hear before August 2.">
+  <title>The EU AI Act Deadline Didn't Move the Way Your Board Thinks It Did — Abhishek Sinha</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;1,8..60,300&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    .article-body table { width: 100%; border-collapse: collapse; margin: 1.5rem 0 1.8rem; font-family: var(--f-sans); font-size: 0.88rem; }
+    .article-body th, .article-body td { text-align: left; padding: 0.6rem 0.9rem; border: 1px solid var(--rule); }
+    .article-body th { background: var(--cream); color: var(--navy); font-weight: 500; font-size: 0.78rem; letter-spacing: 0.03em; text-transform: uppercase; }
+    .article-body td { color: var(--ink-mid); }
+    .article-body td strong { color: var(--navy); }
+    .article-related { margin-top: 1rem; padding: 1.1rem 1.4rem; background: var(--cream); border-left: 3px solid var(--teal); font-family: var(--f-sans); font-size: 0.9rem; color: var(--ink-mid); }
+    .article-related a { color: var(--teal); font-weight: 500; }
+  </style>
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">Abhishek Sinha</a>
+      <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../about.html#research">Research</a></li>
+        <li><a href="../articles.html" class="active">Articles</a></li>
+        <li><a href="../about.html#contact" class="nav-cta">Get in Touch</a></li>
+      </ul>
+      <button class="nav-toggle" aria-label="Menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">&#9776;</button>
+    </div>
+  </nav>
+
+  <div class="article-layout">
+    <div class="article-header">
+      <span class="tag">AI Governance</span>
+      <h1>The EU AI Act Deadline Didn't Move the Way Your Board Thinks It Did</h1>
+      <div class="meta"><span>July 2026</span><span>7 min read</span></div>
+      <p class="lede">"The EU delayed the AI Act" is the version of events that reaches most boards by the time a regulatory update has passed through a couple of layers of summary. It is also wrong in the specific way that matters. A director who walks away from that summary believing the compliance team now has sixteen extra months for everything is a director who is about to discover, on August 2, that chatbots, content generators, and foundation-model providers were never part of the delay.</p>
+    </div>
+
+    <div class="article-body">
+
+      <p>On May 7, 2026, the European Council and Parliament reached political agreement on the Digital Omnibus, the first amendment to the AI Act since it was adopted, formally endorsed by Parliament on June 16 and approved by the Council on June 29. What it actually changed is narrower than "the AI Act got delayed" suggests, and the narrowness is the whole story. None of what follows is EU-only reading, either: the Act applies to any provider or deployer whose AI system's output is used within the EU, regardless of where the company is headquartered, which is most of the reason this keeps landing on the desks of CIOs well outside Europe.</p>
+
+      <h2>What moved</h2>
+
+      <p>Standalone high-risk systems under Annex III (recruitment tools, credit scoring, education, law enforcement, access to essential services) move from an August 2026 compliance date to December 2, 2027, a sixteen-month deferral. AI embedded in regulated products under Annex I (medical devices, machinery, lifts) moves further still, to August 2028. If your organisation's programme was built around getting a hiring algorithm or a credit-scoring model through conformity assessment by this August, that deadline is genuinely gone. The relief is real. It exists because harmonised conformity-assessment standards and notified-body capacity were not ready, a practical response to an unready ecosystem, not a retreat. That reason does not extend to what follows.</p>
+
+      <table>
+        <tr><th>Obligation</th><th>Before the Omnibus</th><th>After the Omnibus</th></tr>
+        <tr><td>Annex III (standalone high-risk)</td><td>August 2026</td><td><strong>December 2, 2027</strong></td></tr>
+        <tr><td>Annex I (product-embedded)</td><td>August 2027</td><td><strong>August 2028</strong></td></tr>
+        <tr><td>Article 50 (transparency, chatbot disclosure)</td><td>August 2, 2026</td><td><strong>Unchanged</strong></td></tr>
+        <tr><td>GPAI enforcement powers (fines, investigation)</td><td>August 2, 2026</td><td><strong>Unchanged</strong></td></tr>
+      </table>
+
+      <h2>What didn't move, and applies in three weeks</h2>
+
+      <p>Article 50 applies exactly on the original schedule. Any system that interacts with a person as a chatbot, virtual assistant, or voice agent has to disclose that fact at first contact. Any system generating synthetic text, images, audio, or video has to mark that output as machine-generated, with a four-month grace period only for systems already on the market before August, not for anything newly deployed after. What this means in practice depends on what you are running:</p>
+
+      <ul>
+        <li><strong>Upstream platforms</strong> (Microsoft Copilot and similar): the disclosure obligation is largely handled by the vendor, though it is still worth confirming rather than assuming.</li>
+        <li><strong>Custom-built or commissioned systems</strong> (your own chatbot, voice agent, or content generator): implementing and documenting the disclosure is your responsibility, and "the deadline moved" is not a reason it can wait.</li>
+      </ul>
+
+      <h2>The enforcement gap that's closing</h2>
+
+      <p>Foundation-model providers have been legally bound by documentation, copyright, and systemic-risk obligations since August 2025. What has been missing is not the obligation but the enforcement tools: the Commission had no statutory power to investigate or fine anyone for falling short. That changes August 2, 2026, when the Commission's supervision and enforcement powers, including fines up to &euro;15 million or 3 percent of global turnover, come into force for the first time. Whether that newly active power can reach back and act on conduct from the 2025-2026 window is a genuinely open question; even the law firms tracking this closely describe real uncertainty about how enforcement will play out in practice. What is not uncertain is the more basic point worth taking to a board: a year of conduct that was already supposed to be compliant is about to be scrutinised for the first time, by an enforcer that previously had no tools to look.</p>
+
+      <h2>Enforcement readiness is uneven, and that cuts one way</h2>
+
+      <p>Roughly ten of the twenty-seven member states show advanced public implementation of the market surveillance infrastructure Article 50 enforcement depends on. Germany's implementing legislation was still moving through its second and third Bundestag readings as of early July, meaning its designated authority is not yet formally in place. An EU-wide obligation does not disappear because one member state's machinery is behind another's, and the Commission's own enforcement powers over GPAI providers are not constrained by which member states have finished their implementing legislation. A company operating across borders should expect the most prepared authority in its footprint to set the practical bar, not the least prepared one, and should not read a slow national rollout as a reason to slow its own.</p>
+
+      <h2>Three questions worth putting to your compliance and legal team this month</h2>
+
+      <ul>
+        <li>Does any system we operate disclose that it is AI when a person interacts with it, and does anything generating synthetic content mark that output as such? Article 50 applies in three weeks regardless of what happened to Annex III.</li>
+        <li>If we build on a foundation model rather than only deploying one, is our provider's documentation and risk-assessment posture over the past year something we would want examined by a regulator newly empowered to look? Roughly two dozen providers, including Anthropic, Google, IBM, Microsoft, and Amazon, had signed the GPAI Code of Practice by June; the rest are working from their own compliance plans. Whichever category our provider falls into, are we confident in it?</li>
+        <li>For the Annex III systems that did get sixteen months of breathing room, is that time being spent on conformity assessment and technical documentation, or is it being spent not thinking about the Act until the next deadline gets close?</li>
+      </ul>
+
+      <p>None of these are questions a board answers itself. They are questions worth confirming someone else already has answers to. The question is not whether your board has heard a summary of this Omnibus. It is whether "we got more time" is the version that survives the trip up the org chart, or whether the more accurate, more useful one does.</p>
+
+      <div class="article-related">
+        Related: <a href="eu-ai-act-cio.html">What the EU AI Act Actually Requires of Your CIO</a> covers the Annex III architecture obligations in depth. This piece picks up where that one leaves off, on the parts of the Act that didn't get the sixteen-month extension.
+      </div>
+
+    </div>
+
+    <div class="article-back">
+      <a href="../articles.html" class="btn-text">&larr; All Articles</a>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-name">Abhishek Sinha</div>
+        <div class="footer-sub">Technology Executive · CTO · CIO · Board Advisor</div>
+      </div>
+      <nav class="footer-nav">
+        <a href="https://epistamate.com/index.html#contact" target="_blank">Get in touch</a>
+        <a href="https://www.linkedin.com/in/abhishek-sinha-bgl" target="_blank">LinkedIn</a>
+        <a href="../articles.html">Articles</a>
+        <a href="../about.html">About</a>
+      </nav>
+    </div>
+    <div class="footer-copy">&copy; 2026 Abhishek Sinha</div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>
