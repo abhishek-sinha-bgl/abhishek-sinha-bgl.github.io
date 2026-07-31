@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A documented human review process is not the same as an effective one. Three tests boards and CIOs can apply to tell a functioning oversight control from a compliance record, grounded in recent Big Four failures and controlled research on human-AI collaboration.">
+  <title>A Framework for Boards and CIOs to Test Whether Human Oversight Actually Works — Abhishek Sinha</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;1,8..60,300&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    .article-body table { width: 100%; border-collapse: collapse; margin: 1.5rem 0 1.8rem; font-family: var(--f-sans); font-size: 0.88rem; }
+    .article-body th, .article-body td { text-align: left; padding: 0.6rem 0.9rem; border: 1px solid var(--rule); }
+    .article-body th { background: var(--cream); color: var(--navy); font-weight: 500; font-size: 0.78rem; letter-spacing: 0.03em; text-transform: uppercase; }
+    .article-body td { color: var(--ink-mid); }
+    .article-body td strong { color: var(--navy); }
+    .article-related { margin-top: 1rem; padding: 1.1rem 1.4rem; background: var(--cream); border-left: 3px solid var(--teal); font-family: var(--f-sans); font-size: 0.9rem; color: var(--ink-mid); }
+    .article-related a { color: var(--teal); font-weight: 500; }
+    .article-related p + p { margin-top: 0.6rem; }
+  </style>
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">Abhishek Sinha</a>
+      <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../about.html#research">Research</a></li>
+        <li><a href="../articles.html" class="active">Articles</a></li>
+        <li><a href="../about.html#contact" class="nav-cta">Get in Touch</a></li>
+      </ul>
+      <button class="nav-toggle" aria-label="Menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">&#9776;</button>
+    </div>
+  </nav>
+
+  <div class="article-layout">
+    <div class="article-header">
+      <span class="tag">AI Governance</span>
+      <h1>A Framework for Boards and CIOs to Test Whether Human Oversight Actually Works</h1>
+      <div class="meta"><span>July 2026</span><span>9 min read</span></div>
+      <p class="lede">Most AI governance frameworks treat human review as evidence that oversight exists. It proves only that a workflow step was completed. The material question is whether the reviewer could detect this system's failure, was allowed to form an independent judgment, and changed the outcome when the evidence required it, and recent failures at professional-services firms and public agencies show that a review process can be fully documented while failing all three tests.</p>
+    </div>
+
+    <div class="article-body">
+
+      <p>Boards and CIOs need to stop asking whether a human is in the loop. They need to apply three tests: whether the reviewer has a task-specific advantage, whether the interface preserves independent judgment, and whether the organisation can demonstrate that review works under production conditions.</p>
+
+      <h2>The pattern that makes this concrete</h2>
+
+      <p>KPMG's own governance policy makes the distinction between documentation and function unusually clear. The firm pulled a flagship report on agentic AI adoption in 2026 after a forensic audit found only five of forty-five citations pointed to real sources, despite a stated policy of mandatory human oversight to verify content before publication. The EU's cybersecurity agency, ENISA, found the same failure inside two of its own threat reports. Similar failures led to withdrawn or corrected reports at other professional-services firms and public bodies across several jurisdictions within the same ten-month period. Every one of these organisations had a defined review process on paper.</p>
+
+      <p>The evidence points to three tests, not three best practices, that separate a functioning control from a documented one.</p>
+
+      <h2>Test 1: Does the reviewer add a distinct capability on this decision?</h2>
+
+      <p>Not seniority, credentials, or availability. What can this reviewer detect, interpret, or decide that the system cannot reliably handle on its own? For some workflows that capability is superior error detection. For others it is contextual judgment the system was never given, exception handling, applying organisational values where there is no objectively correct answer, or the accountable authority to approve or stop an action. A human reviewer can be doing real governance work without being demonstrably more accurate than the system on a narrow prediction task, and a test that only asks "who catches more errors" will miss that.</p>
+
+      <p>A 2026 study in <em>Radiology</em> makes the non-uniform reality concrete for the error-detection case specifically. Researchers tested an identical AI-assisted workflow on 60 general radiologists and 35 breast imaging specialists. Among the generalists, cancer detection rose from 3.76 to 4.99 per 1,000 exams, closing the gap to specialists' own rate of 4.76. Among the specialists, the same workflow produced no measured improvement in that study. The mandate was uniform. The effect was not. (The research behind this pattern is examined in more depth in <a href="https://epistamate.com/blog/human-reviewer-not-one-variable.html" target="_blank">"A human reviewer is not one variable"</a> on Epistamate.)</p>
+
+      <p><strong>The board should require:</strong> a clear statement of the function a given reviewer is expected to perform, whether error detection, contextual judgment, exception handling, value judgment, or accountable authorisation, and evidence that the assigned reviewer can actually perform that function.</p>
+
+      <p><strong>The CIO should implement:</strong> routing based on the capability the task actually requires, rather than grade or availability, and a requirement that vendors support that routing rather than assuming one review tier fits every case. Uniform review can add real value for some reviewers and little measured benefit for others. It can also mean experienced reviewers repeatedly perform checks on which they add little, which tends to produce disengagement and, eventually, rubber-stamping.</p>
+
+      <h2>Test 2: Does the workflow preserve independent judgment?</h2>
+
+      <p>Does the reviewer see source material before seeing the AI's answer, confidence, or recommendation?</p>
+
+      <p>Research on human-AI collaboration has found that giving reviewers a system's underlying evidence improves their judgment, while giving them the system's stated conclusion and confidence score instead measurably degrades it, below what an unassisted reviewer would produce alone. A 2026 Oxford and UK AI Security Institute study adds a sharper reason to take the distinction seriously: across controlled experiments, AI systems consistently out-persuaded expert human debaters, and being more persuasive was not the same as being more accurate. Persuasiveness is not evidence of correctness, and a system may hold an independent advantage at producing conclusions that feel compelling regardless of whether they are right. (This study is discussed in more depth in <a href="https://epistamate.com/blog/human-ai-collaboration-evidence.html" target="_blank">"When humans and AI work together, what the evidence actually shows"</a> on Epistamate.)</p>
+
+      <p><strong>The board should require:</strong> evidence that material review workflows have been tested for automation bias and preserve a genuine opportunity for independent judgment before the system's conclusion is seen.</p>
+
+      <p><strong>The CIO should implement:</strong> evidence-first or delayed-reveal interfaces where independent assessment is feasible, and workflow demonstrations during vendor evaluation showing what a reviewer actually sees first and in what order. This is not a universal design mandate; some systems exist precisely to triage or prioritise evidence a human could not otherwise get through, and in those cases withholding all AI prioritisation can make review slower or worse. The underlying principle holds regardless: the design must prevent the AI's conclusion from becoming the reviewer's unexamined starting point, whether or not the AI also helps surface what to look at first. This makes interface design a primary control lever, not a detail to be addressed after training; funding a training program to counter automation bias while leaving the interface untouched is solving a structural problem with an educational one. For a CIO evaluating a vendor, the operative question is direct: are reviewers seeing the relevant source material first, or are they being prompted to confirm a pre-packaged answer?</p>
+
+      <h2>Test 3: Can the organisation demonstrate that review changes outcomes?</h2>
+
+      <p>Not "was approval recorded," but what errors were caught, what decisions were changed, and what happened afterward.</p>
+
+      <p>A 2026 preprint, not yet independently peer reviewed, studied developers reviewing AI-generated code for sabotage. With no safety monitor present, 94 percent failed to detect it at all. When researchers added a monitor that correctly flagged the malicious action, 56 percent of participants still approved the flagged output anyway. The checkpoint existed. It functioned as designed. The organisation would, on paper, have shown a clean audit trail: human reviewed, human approved. That trail would not show that the review was substantively empty. (The full study is discussed in <a href="https://epistamate.com/blog/human-ai-collaboration-evidence.html" target="_blank">"When humans and AI work together, what the evidence actually shows"</a> on Epistamate.)</p>
+
+      <p>A sign-off log records process completion. Control effectiveness requires outcome-linked evidence: what the reviewer changed, what they missed, and whether the resulting decision was better. A single measure is not enough to see this clearly. Override rate shows disagreement, not whether the disagreement was correct. False-acceptance rate shows missed errors, not how many were successfully caught. Review yield needs a credible denominator that may not exist yet in live operation. Three measurements together give a fuller picture:</p>
+
+      <ul>
+        <li><strong>Override or disagreement rate:</strong> does the reviewer ever reach an independent conclusion, or does approval track the system's recommendation near-perfectly?</li>
+        <li><strong>False-acceptance rate:</strong> how often is an output the reviewer approved later found to be wrong?</li>
+        <li><strong>Review yield:</strong> what proportion of substantive errors are actually caught, or decisions materially improved, by the review step?</li>
+      </ul>
+
+      <p>Where known outcomes are not yet available, controlled test cases or seeded errors, appropriate to the domain, can substitute until real outcome data accumulates. Figures should also be segmented by task type, system version, and reviewer cohort; an aggregate rate can conceal both effective review and systematic failure sitting underneath it.</p>
+
+      <p><strong>The board should require:</strong> a risk-appropriate set of outcome-linked measures for material AI-assisted workflows, including at least one measure of reviewer independence and one measure of review effectiveness, with material weaknesses and trends reported rather than raw metrics for every workflow.</p>
+
+      <p><strong>The CIO should implement:</strong> event logs and exportable review data that connect a review decision to its later outcome, and vendor requirements for the same before procurement, not after. A vendor's claim that its product includes human review is a feature description, not assurance evidence.</p>
+
+      <h2>Match the control to the stakes</h2>
+
+      <p>None of this means every AI-assisted decision needs the same oversight. A document review where an error is recoverable after publication is a different governance problem from a clinical or safety-critical decision where the error is immediate and difficult to reverse, and different again from an iterative system like a trading algorithm where the relevant control is closer to continuous monitoring than a single sign-off. The EU AI Act's Article 14 makes a version of this distinction explicit: high-risk systems require human oversight, and for the most acute categories, such as biometric identification used in law enforcement, independent verification by at least two people rather than one. The two-person requirement reflects a materially higher evidentiary bar for that specific use case, not a general instruction to double every checkpoint.</p>
+
+      <p>This distinction also reframes what kind of risk is actually being managed. The incidents cited above were not, principally, failures of the underlying AI; they were failures of governance to detect that the AI had failed. Better models may reduce how often something goes wrong. Better governance is what ensures the organisation finds out either way, which is a different function and needs to be built and audited separately from model quality.</p>
+
+      <h2>The three tests at a glance</h2>
+
+      <table>
+        <tr><th>Test</th><th>Board question</th><th>CIO action</th><th>Evidence to retain</th></tr>
+        <tr><td>Distinct capability</td><td>What can this reviewer detect, interpret, or decide that the system cannot?</td><td>Route by the capability the task requires, not grade or availability</td><td>Performance on known-outcome cases, by reviewer and task type</td></tr>
+        <tr><td>Independent judgment</td><td>Does the reviewer see evidence before the AI's conclusion?</td><td>Use evidence-first or delayed-reveal interfaces where feasible</td><td>Interface specification and reviewer disagreement behaviour</td></tr>
+        <tr><td>Demonstrable effect</td><td>Does review materially change outcomes?</td><td>Connect review events to later outcomes; require the same from vendors</td><td>Override rate, false-acceptance rate, review yield</td></tr>
+      </table>
+
+      <h2>What to do at the next governance review</h2>
+
+      <p>Ask management to select a small number of material AI-assisted workflows and answer, for each:</p>
+
+      <ul>
+        <li>What specific failure is human review intended to catch?</li>
+        <li>Why is this reviewer better positioned than the system to catch it?</li>
+        <li>What does the reviewer see before forming a judgment?</li>
+        <li>What evidence shows that review has detected errors or changed outcomes?</li>
+        <li>What happens when workload, urgency, or system autonomy exceeds review capacity?</li>
+      </ul>
+
+      <p>Applied to a small number of material workflows, these questions distinguish a functioning control from a documented process.</p>
+
+      <p>"Human in the loop" should not be accepted as the answer to a governance question. It should trigger a more specific examination of capability, interface, and evidence. A board that can explain what the reviewer contributes, how independent judgment is protected, and how effectiveness is measured has a control. A board that can show only that approval was recorded has evidence of process completion, not control effectiveness.</p>
+
+      <div class="article-related">
+        <p>Related, on Epistamate: <a href="https://epistamate.com/blog/human-reviewer-not-one-variable.html" target="_blank">"A human reviewer is not one variable"</a> examines why availability, competence, and state fail independently, and <a href="https://epistamate.com/blog/human-ai-collaboration-evidence.html" target="_blank">"When humans and AI work together, what the evidence actually shows"</a> covers the controlled research on when human-AI collaboration helps and when it doesn't. This piece translates both into the three tests above for the people who approve the governance policy.</p>
+      </div>
+
+    </div>
+
+    <div class="article-back">
+      <a href="../articles.html" class="btn-text">&larr; All Articles</a>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-name">Abhishek Sinha</div>
+        <div class="footer-sub">Technology Executive &middot; CTO &middot; CIO &middot; Board Advisor</div>
+      </div>
+      <nav class="footer-nav">
+        <a href="https://epistamate.com/index.html#contact" target="_blank">Get in touch</a>
+        <a href="https://www.linkedin.com/in/abhishek-sinha-bgl" target="_blank">LinkedIn</a>
+        <a href="../articles.html">Articles</a>
+        <a href="../about.html">About</a>
+      </nav>
+    </div>
+    <div class="footer-copy">&copy; 2026 Abhishek Sinha</div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>
