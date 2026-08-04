@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="An AI approval is a judgment about a particular system, operating under particular conditions, supported by evidence gathered at a particular time. Three tests boards and CIOs can use to tell whether that approval still applies once the system has changed.">
+  <title>When an AI Approval Stops Being Current — Abhishek Sinha</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;1,8..60,300&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    .article-body table { width: 100%; border-collapse: collapse; margin: 1.5rem 0 1.8rem; font-family: var(--f-sans); font-size: 0.88rem; }
+    .article-body th, .article-body td { text-align: left; padding: 0.6rem 0.9rem; border: 1px solid var(--rule); }
+    .article-body th { background: var(--cream); color: var(--navy); font-weight: 500; font-size: 0.78rem; letter-spacing: 0.03em; text-transform: uppercase; }
+    .article-body td { color: var(--ink-mid); }
+    .article-body td strong { color: var(--navy); }
+    .article-related { margin-top: 1rem; padding: 1.1rem 1.4rem; background: var(--cream); border-left: 3px solid var(--teal); font-family: var(--f-sans); font-size: 0.9rem; color: var(--ink-mid); }
+    .article-related a { color: var(--teal); font-weight: 500; }
+    .article-related p + p { margin-top: 0.6rem; }
+  </style>
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">Abhishek Sinha</a>
+      <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../about.html#research">Research</a></li>
+        <li><a href="../articles.html" class="active">Articles</a></li>
+        <li><a href="../about.html#contact" class="nav-cta">Get in Touch</a></li>
+      </ul>
+      <button class="nav-toggle" aria-label="Menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">&#9776;</button>
+    </div>
+  </nav>
+
+  <div class="article-layout">
+    <div class="article-header">
+      <span class="tag">AI Governance</span>
+      <h1>When an AI Approval Stops Being Current</h1>
+      <div class="meta"><span>August 2026</span><span>7 min read</span></div>
+      <p class="lede">Boards commonly approve an AI use case as though the decision attaches permanently to the application. In practice, an approval is a judgment about a particular system, operating under particular conditions, supported by evidence gathered at a particular time, and any of those components can change without the application ever returning to the board or receiving a new name. Three tests separate a governance decision that still holds from one that only looks like it does.</p>
+    </div>
+
+    <div class="article-body">
+
+      <p>Boards commonly approve an AI use case as though the decision attaches permanently to the application. In practice, an approval is a judgment about a particular system, a specific configuration of model, data, workflow, permissions, and users, operating under particular conditions, supported by evidence gathered at a particular point in time. Any of those components can change without the application ever returning to the board or receiving a new name.</p>
+
+      <p>I wrote recently about a parallel problem in AI-assisted research: a claim can be correct, well-sourced, and no longer true, because citation validity and temporal validity are separate properties. The same distinction holds for governance. An approval record proves that a particular system was judged acceptable under particular conditions. It does not prove that the system currently in production still matches either of them.</p>
+
+      <p>Conventional change control is not the wrong tool here. It is an incomplete one. Traditional change management already addresses impact, risk, testing, approval, scheduling, dependencies, and rollback. Its blind spot is that AI-system behaviour can also change through vendor-controlled model updates, retrieval changes, prompt and tool configurations, inference settings, and user context, including changes outside the components the organisation versions itself. These changes can bypass ordinary change control precisely because they occur inside a vendor service or through configuration rather than code.</p>
+
+      <h2>The object being governed is the whole system, not the model name</h2>
+
+      <p>Organisations often use "the model," "the application," and "the AI system" interchangeably, and that habit hides where change actually enters. The object being governed is the complete deployed system: the model itself, the instructions and policy layer wrapped around it, the sources it retrieves from, the tools it can call, the permissions it operates under, and the humans positioned to catch its mistakes. A change to any one of these can move the system outside the boundary the original approval assumed, even while the application keeps the same name on the same dashboard.</p>
+
+      <table>
+        <tr><th>Component</th><th>Example of change</th><th>Possible governance consequence</th></tr>
+        <tr><td>Model</td><td>Vendor upgrades the underlying foundation model</td><td>Capability or failure pattern shifts</td></tr>
+        <tr><td>Instructions</td><td>System prompt or policy wording changes</td><td>Different decisions or boundaries</td></tr>
+        <tr><td>Retrieval</td><td>New sources added, or ranking changes</td><td>Different evidence reaches the model</td></tr>
+        <tr><td>Tools</td><td>Agent gains access to email, payments, or code execution</td><td>Consequence of an error increases</td></tr>
+        <tr><td>Permissions</td><td>Agent can act without confirmation</td><td>Human control is reduced</td></tr>
+        <tr><td>Users</td><td>Internal pilot expands to customers</td><td>New populations, new obligations</td></tr>
+        <tr><td>Environment</td><td>Regulation or threat landscape shifts</td><td>Previously accepted risk may no longer be acceptable</td></tr>
+      </table>
+
+      <p>The board doesn't need the technical detail behind each row. It needs confidence that management is governing the complete system rather than tracking a model name on a vendor contract.</p>
+
+      <h2>Three tests for whether an approval still applies</h2>
+
+      <h2>Test 1: Is the operating system still materially equivalent to the one that was approved?</h2>
+
+      <p>Something almost always changes. The question isn't whether change happened, it's whether the change altered a capability, failure mode, affected population, decision boundary, or potential consequence that mattered to the original approval. The UK AI Security Institute has identified significant post-deployment system changes as points at which renewed evaluation may be warranted, including the addition of tools, domain-specific fine-tuning, and longer context windows, part of an evolving, still-tentative approach to lifecycle testing rather than settled practice, but a useful list to borrow regardless: a model upgrade that enables longer autonomous workflows, a new data source that introduces personal or regulated information, a shift from recommendation to execution, a workflow that expands into a new jurisdiction, a human approval step that gets removed or delayed.</p>
+
+      <p><strong>The board should require:</strong> a management-defined standard for what counts as material equivalence for each system.</p>
+
+      <p><strong>The CIO should implement:</strong> a system inventory and version record that covers more than the model identifier, since the model is only one of the components in the table above.</p>
+
+      <h2>Test 2: Does the earlier evidence still apply?</h2>
+
+      <p>An evaluation result applies most directly to the system and conditions it actually tested. After a change, management has to establish which findings remain transferable and which require revalidation, not assume either that nothing has changed or that everything has. Reusing an old evaluation after a material change without checking which findings still hold is the operational equivalent of citing a well-sourced claim whose validity window has already closed. Where the change is vendor-controlled, contracts and operating procedures should provide enough notice, version information, and rollback capability for the organisation to determine whether earlier evidence remains applicable. A vendor's assurance describes the system it tested. It does not establish that the same system, configuration, and safeguards are operating in the customer's environment today.</p>
+
+      <p><strong>The board should require:</strong> evidence that material changes trigger risk-appropriate revalidation.</p>
+
+      <p><strong>The CIO should implement:</strong> traceability between deployed versions, evaluation results, and the approvals that relied on them.</p>
+
+      <h2>Test 3: Can the organisation detect when the system leaves its approved boundary?</h2>
+
+      <p>Pre-deployment testing cannot establish every production behaviour. A March 2026 NIST report, based on three practitioner workshops and a review of 87 studies, identifies non-standardised metrics and difficulties establishing baselines and deviation thresholds as recurring barriers to monitoring deployed AI systems. Better tools may help, but they cannot determine which baseline matters, what degree of deviation is acceptable, or who has authority to act. Those are governance decisions. The organisation needs signals showing whether error rates changed, escalation patterns shifted materially, tool use expanded beyond what was approved, or the system began operating on cases outside its intended scope.</p>
+
+      <p><strong>The board should require:</strong> reporting on material deviations from approved assumptions, not routine operational metrics repackaged as assurance.</p>
+
+      <p><strong>The CIO should implement:</strong> monitoring tied specifically to the assumptions and limits documented at the time of approval, not a generic dashboard.</p>
+
+      <h2>Not every change is a board matter</h2>
+
+      <p>A framework that treats every prompt edit as a governance event will get ignored, which defeats the purpose. The right classification depends on effect, not on the technical form the change takes. A model replacement or a prompt change should each trigger an impact assessment; which tier it lands in depends on what the change actually does to the deployed system, not on which layer of the stack it touched. A small wording change to a system prompt or safety policy can produce a material behavioural shift, since the instructions are as much a part of the governed system as the model itself; a model swap might, after testing, turn out to change nothing that mattered for a narrowly constrained use case.</p>
+
+      <table>
+        <tr><th>Change tier</th><th>Governance test</th><th>Required response</th></tr>
+        <tr><td>Routine</td><td>Demonstrated not to affect behaviour, risk, controls, or approved scope</td><td>Logged and locally tested</td></tr>
+        <tr><td>Significant</td><td>Behaviour changes within the existing purpose and risk boundary</td><td>Targeted revalidation</td></tr>
+        <tr><td>Material</td><td>An assumption, capability, population, permission, control, or consequence relied on in the approval may no longer hold</td><td>Formal risk reassessment</td></tr>
+        <tr><td>Fundamental</td><td>Intended purpose, legal classification, or overall risk profile changes</td><td>Treated as a new deployment</td></tr>
+      </table>
+
+      <p>Materiality should also be assessed cumulatively, not only per release. Five changes individually classified as routine can move a system further from its approved baseline than one change formally logged as significant, and a framework that only ever looks at the most recent release will miss that drift entirely.</p>
+
+      <p>The EU AI Act offers one regulatory analogue. It defines a "substantial modification" as an unforeseen or unplanned post-market change that affects compliance with the high-risk requirements or changes the assessed intended purpose. Its logging requirements also recognise that organisations need records capable of helping identify changes that may require reassessment, without the system itself being expected to make that determination; a person still has to interpret the record. The practical boundary remains imperfectly specified externally, which is a reason to establish an internal classification now rather than wait for regulation to resolve every case.</p>
+
+      <p>The board's role in this classification isn't to review each technical change. It's to approve the escalation rule itself, and to decide which tier of change management can handle without coming back for renewed sign-off.</p>
+
+      <h2>What to bring to the next governance review</h2>
+
+      <p>Ask which deployed AI systems have changed materially since their last approval, and whether anyone could answer that with evidence rather than an impression. Ask what the organisation classifies as a material change for each system, and who owns that classification. Ask whether management evaluates cumulative change over time, or only the most recent release. Ask whether each system's current version can be linked to the evaluation evidence used to approve it, or whether that thread has gone cold. Ask which vendor-controlled changes can happen without prior notice, and what the plan is when one does. And ask what specific production signal would cause management to suspend, restrict, or revalidate a system, rather than assuming someone would notice in time.</p>
+
+      <p>A board does not need to approve every model update, prompt revision, or new data source. It needs confidence that management can tell the difference between routine change and a change that invalidates the assumptions behind an earlier decision. Where that distinction can't be made, the organisation doesn't have continuing assurance. It has an approval record for a system that may no longer exist.</p>
+
+      <div class="article-related">
+        <p>Related, on Epistamate: <a href="https://epistamate.com/blog/claim-correct-not-current.html" target="_blank">"A claim can be correct, well-sourced, and no longer true"</a> examines the same underlying idea, that source support and currency are separate properties, at the level of a research claim. This article translates that distinction into a governance framework for the people who approve an AI system, not just the people researching one.</p>
+      </div>
+
+    </div>
+
+    <div class="article-back">
+      <a href="../articles.html" class="btn-text">&larr; All Articles</a>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-name">Abhishek Sinha</div>
+        <div class="footer-sub">Technology Executive &middot; CTO &middot; CIO &middot; Board Advisor</div>
+      </div>
+      <nav class="footer-nav">
+        <a href="https://epistamate.com/index.html#contact" target="_blank">Get in touch</a>
+        <a href="https://www.linkedin.com/in/abhishek-sinha-bgl" target="_blank">LinkedIn</a>
+        <a href="../articles.html">Articles</a>
+        <a href="../about.html">About</a>
+      </nav>
+    </div>
+    <div class="footer-copy">&copy; 2026 Abhishek Sinha</div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>
