@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A benchmark score or vendor capability claim can be produced honestly and reported accurately, and still be the wrong evidence for the decision a board is being asked to make. What AISI's compute-budget findings and NIST's statistical framework mean for reading an AI evaluation as a board or CIO.">
+  <title>An AI Evaluation Is a Decision Instrument, Not a Score — Abhishek Sinha</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;1,8..60,300&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    .article-body table { width: 100%; border-collapse: collapse; margin: 1.5rem 0 1.8rem; font-family: var(--f-sans); font-size: 0.88rem; }
+    .article-body th, .article-body td { text-align: left; padding: 0.6rem 0.9rem; border: 1px solid var(--rule); }
+    .article-body th { background: var(--cream); color: var(--navy); font-weight: 500; font-size: 0.78rem; letter-spacing: 0.03em; text-transform: uppercase; }
+    .article-body td { color: var(--ink-mid); }
+    .article-body td strong { color: var(--navy); }
+    .article-related { margin-top: 1rem; padding: 1.1rem 1.4rem; background: var(--cream); border-left: 3px solid var(--teal); font-family: var(--f-sans); font-size: 0.9rem; color: var(--ink-mid); }
+    .article-related a { color: var(--teal); font-weight: 500; }
+    .article-related p + p { margin-top: 0.6rem; }
+
+    /* Two-source question block: AISI / NIST */
+    .question-split { display: grid; grid-template-columns: 1fr 1fr; gap: 1.4rem; margin: 1.8rem 0 2.2rem; }
+    .question-split .qcol { background: var(--cream); padding: 1.5rem 1.6rem 1.6rem; border-top: 3px solid var(--navy); }
+    .question-split .qcol.nist { border-top-color: var(--teal); }
+    .question-split .qcol h3 { font-family: var(--f-sans); font-size: 0.72rem; font-weight: 500; letter-spacing: 0.14em;
+                                text-transform: uppercase; color: var(--navy); margin: 0 0 0.3rem; }
+    .question-split .qcol.nist h3 { color: var(--teal); }
+    .question-split .qcol .qsource { font-family: var(--f-sans); font-size: 0.78rem; color: var(--ink-lt); margin: 0 0 1rem; }
+    .question-split .qcol ol { margin: 0; padding-left: 1.15rem; }
+    .question-split .qcol li { font-family: var(--f-serif); font-size: 0.94rem; line-height: 1.55; color: var(--ink-mid); }
+    .question-split .qcol li + li { margin-top: 0.85rem; }
+    @media (max-width: 640px) {
+      .question-split { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">Abhishek Sinha</a>
+      <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../about.html#research">Research</a></li>
+        <li><a href="../articles.html" class="active">Articles</a></li>
+        <li><a href="../about.html#contact" class="nav-cta">Get in Touch</a></li>
+      </ul>
+      <button class="nav-toggle" aria-label="Menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">&#9776;</button>
+    </div>
+  </nav>
+
+  <div class="article-layout">
+    <div class="article-header">
+      <span class="tag">AI Governance</span>
+      <h1>An AI Evaluation Is a Decision Instrument, Not a Score</h1>
+      <div class="meta"><span>August 2026</span><span>6 min read</span></div>
+      <p class="lede">A benchmark score or vendor capability claim can be produced honestly and reported accurately, and still be the wrong evidence for the decision a board is being asked to make. Two recent studies, from the UK's AI Security Institute and from NIST, show why: the compute budget an evaluation used and the statistical quantity it actually measured both change what a number can support, independent of whether the evaluation itself was well run.</p>
+    </div>
+
+    <div class="article-body">
+
+      <p>A board is asked to approve deployment of an AI system into a consequential workflow: a customer-facing decision, a financial risk assessment, a step that touches patient information. The vendor's pitch deck includes a capability score. An internal pilot report includes a success rate. Somewhere in the discussion, someone cites a benchmark result showing the system outperforms a competitor. An evaluation number can be treated as though it were a portable property of the system, something fixed that will hold regardless of how the system ends up being used. Whether that inference travels has to be established, not assumed.</p>
+
+      <p>A related article on this site asked whether a human reviewer actually catches what an AI system gets wrong. That is a question about a control: does the reviewer add something real, or simply approve what was already there. This article asks a different question. Whatever review process sits downstream of a capability number, the number describing what a system can do deserves scrutiny as evidence in its own right.</p>
+
+      <p>An evaluation result is an estimate produced under specific conditions. The part worth pausing on is this: it does not have to be wrong to mislead. A number can be completely accurate and still be the wrong evidence for the decision in front of a board. Two recent studies, one from the UK's <a href="https://www.aisi.gov.uk/blog/more-compute-more-capability-why-ai-agent-evals-need-to-account-for-test-time-compute" target="_blank">AI Security Institute (AISI)</a>, one from the US <a href="https://www.nist.gov/publications/expanding-ai-evaluation-toolbox-statistical-models" target="_blank">National Institute of Standards and Technology (NIST)</a>, show this from two different directions.</p>
+
+      <h2>How compute budget changes measured capability</h2>
+
+      <p>AISI's Science of Evaluations team tested frontier AI agents across a range of compute budgets rather than scoring each model once at a fixed cutoff. The finding: agent capability is not a single number but a curve that rises as the compute budget grows, and if that curve is still rising when an evaluation stops, the reported score is a lower bound, not a ceiling. For one recent frontier model, AISI's estimated 80 percent time horizon, the duration of task the model can complete with an 80 percent success rate, rose from around 40 minutes at a 2.5-million-token budget to around 4 hours at a 50-million-token budget. The model and task set were unchanged; the evaluation compute budget was not.</p>
+
+      <p>The consequence appears at the level of trend estimates as well, not just individual scores. AISI's own previous estimate of how fast frontier cyber capability has been advancing, a doubling time of 4.7 months, was measured at a 2.5-million-token budget. Measured at 50 million tokens instead, the fitted trend comes out roughly 60 percent steeper. The apparent rate of frontier progress therefore also depends partly on the compute budget used to estimate capability.</p>
+
+      <p>This does not mean more compute always reveals more capability, and that limitation is itself decision-relevant rather than a caveat to set aside. On HealthBench, AISI found every model plateaued within its usual budget; extra compute helped most where a system could check its own work, such as code or cybersecurity tasks, and helped little where feedback was weak or absent. Whether compute budget is material therefore depends on the task setting; it cannot be treated as an incidental evaluation detail in one setting simply because it proved immaterial in another.</p>
+
+      <h2>Benchmark accuracy and generalized accuracy</h2>
+
+      <p>NIST's contribution comes from a different angle. Its report on statistical modeling in AI benchmarking formally separates two things a single accuracy number can mean: benchmark accuracy, performance on the specific set of questions in that benchmark, and generalized accuracy, performance across the broader population of similar questions the benchmark is meant to represent. These are not the same quantity, and treating them as interchangeable can mislead. In an illustrative analysis of 22 frontier language models across three benchmarks, NIST found that some model pairs had significantly different benchmark accuracy while showing no significant difference in generalized accuracy. One such comparison, on GPQA-Diamond, was Llama 3 (40B) versus Phi 4. Two systems that appeared statistically different on the fixed benchmark questions were not shown to differ significantly in generalized accuracy over the broader population of similar questions.</p>
+
+      <p>Statistical significance is not the same thing as business materiality, and NIST's framework only speaks to the former. Even where a comparison is statistically supported, management still has to decide whether the size of that difference matters for the decision at hand.</p>
+
+      <h2>From an evaluation result to a decision</h2>
+
+      <p>A vendor's outperformance claim, an internal pilot's success rate, and a benchmark citation in a proposal do not all inherit exactly the same vulnerability. AISI's finding concerns agent evaluations and the resource budget allowed during testing. NIST's concerns the statistical relationship between a fixed set of test questions and the broader population those questions are meant to stand in for. A board's task is not to demand identical documentation for every number it is shown. It is to understand which conditions and assumptions are material to the inference being drawn from that number for the decision at hand.</p>
+
+      <p>Concretely: was the resource budget appropriate to the capability claim being made and to the way the system will actually be used, and would a materially different budget change the conclusion? And is the apparent advantage specific to the exact questions in this benchmark, or does the evidence support expecting it across the broader class of tasks the organization actually cares about?</p>
+
+      <h2>What management should be able to explain</h2>
+
+      <p>Management, not the board itself, should be able to answer four things about any evaluation number put forward as evidence, two of them AISI's territory and two of them NIST's.</p>
+
+      <div class="question-split">
+        <div class="qcol aisi">
+          <h3>From AISI</h3>
+          <p class="qsource">Compute budget and resource conditions</p>
+          <ol>
+            <li>What compute or resource budget produced this number, and had performance plateaued at that budget, or was the curve still rising when the evaluation stopped?</li>
+            <li>Was that budget appropriate to how the system will actually be resourced once deployed, such that a materially different budget would not change the conclusion?</li>
+          </ol>
+        </div>
+        <div class="qcol nist">
+          <h3>From NIST</h3>
+          <p class="qsource">What the number estimates, and how confidently</p>
+          <ol>
+            <li>What exactly is this number estimating: the specific test items used, or a broader population of similar tasks?</li>
+            <li>How much uncertainty surrounds any comparison being drawn from it, and is the apparent difference actually supported for the quantity that matters?</li>
+          </ol>
+        </div>
+      </div>
+
+      <p>A board does not need to interrogate an estimand or a confidence interval. It needs assurance that management can justify the connection between the evaluation and the decision.</p>
+
+      <p>Both AISI and NIST arrive at a version of the same conclusion from different directions. Change a material compute budget, and measured capability can change. Change what quantity is being estimated or how uncertainty is treated, and the comparison the evidence supports can change. Neither finding says evaluators were careless. Both show that what an evaluation result supports depends on its measurement target and on the conditions under which it was produced. This sits inside what is increasingly called AI assurance, but the evaluation number itself is where that assurance either holds or does not. A result does not have to be wrong to be inadequate evidence for a decision. The job of governance, in this narrower sense, is not to reproduce the evaluation. It is to ensure that the organization can justify why the evaluation supports the decision being made from it.</p>
+
+    </div>
+
+    <div class="article-back">
+      <a href="../articles.html" class="btn-text">&larr; All Articles</a>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-name">Abhishek Sinha</div>
+        <div class="footer-sub">Technology Executive &middot; CTO &middot; CIO &middot; Board Advisor</div>
+      </div>
+      <nav class="footer-nav">
+        <a href="https://epistamate.com/index.html#contact" target="_blank">Get in touch</a>
+        <a href="https://www.linkedin.com/in/abhishek-sinha-bgl" target="_blank">LinkedIn</a>
+        <a href="../articles.html">Articles</a>
+        <a href="../about.html">About</a>
+      </nav>
+    </div>
+    <div class="footer-copy">&copy; 2026 Abhishek Sinha</div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>
