@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Knowledge management has spent decades solving how to keep documents current. Generative AI reuses knowledge at the level of the individual claim, not the document, so the old controls no longer travel automatically with what gets generated. A framework and five questions for testing whether an AI-enabled workflow actually accounts for that.">
+  <title>The Knowledge Base Was Never the Hard Part — Abhishek Sinha</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;1,8..60,300&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">Abhishek Sinha</a>
+      <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../about.html#research">Research</a></li>
+        <li><a href="../articles.html" class="active">Articles</a></li>
+        <li><a href="../about.html#contact" class="nav-cta">Get in Touch</a></li>
+      </ul>
+      <button class="nav-toggle" aria-label="Menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">&#9776;</button>
+    </div>
+  </nav>
+
+  <div class="article-layout">
+    <div class="article-header">
+      <span class="tag">AI Governance</span>
+      <h1>The Knowledge Base Was Never the Hard Part</h1>
+      <div class="meta"><span>September 2026</span><span>12 min read</span></div>
+      <p class="lede">Knowledge management has spent decades solving how to keep documents current. Generative AI reuses knowledge at the level of the individual claim, not the document, so the old controls no longer travel automatically with what gets generated. This article argues for governing the claim, not just the source, and offers a short framework and five concrete questions for testing whether an AI-enabled workflow actually does that.</p>
+    </div>
+
+    <div class="article-body">
+
+      <p>Organizations that respond to enough RFPs eventually build the same thing: a library of past answers, standard responses to recurring questions, sections owned by Legal, Security, Product, Commercial, Sustainability. The promise was always simple: stop rewriting the same content for every proposal. It worked, for a while. Then the library itself became a maintenance burden. A polished, previously approved answer would sit in the system looking exactly as authoritative as it did the day it was approved, while the certification behind it had lapsed, the price had changed, or the jurisdiction it applied to had shifted. The knowledge base was never the hard part. Knowing when yesterday's approved answer should still be trusted today was.</p>
+
+      <p>That problem is not new. Document control and quality-management practice have dealt with revision status, re-approval, and obsolete material for decades; ISO 30401 treats knowledge management as something that has to be maintained and reviewed, not captured once and left alone. Organizational research reaches back further still: Szulanski's 1996 study of best-practice transfer inside firms found knowledge-reuse failures were structural, not motivational, and Markus's subsequent research on knowledge repositories found that content built by one group usually needs rework before a different group can safely reuse it. Those findings predate generative AI by decades.</p>
+
+      <p>What AI changes is real, and worth being specific about. It can parse a hundred-page RFP into discrete questions, retrieve the most semantically similar prior answer to each one, and turn a fragment of approved language into a fluent, customer-specific paragraph in seconds, citation attached. That is real progress. But retrieval and drafting are not the same operation as validity-checking, and treating them as though they were is where the risk sits, and where AI genuinely changes the shape of an old problem rather than just accelerating it.</p>
+
+      <h2>The unit of control has moved</h2>
+
+      <p><strong>AI-assisted reuse changes the unit being governed.</strong> Traditional knowledge governance, including document control, ISO 30401-aligned programs, and an old-fashioned proposal library, has often attached ownership, version, and approval state to the document. A generative system does not have to reuse a document. It can combine a paragraph from a security policy, a product fact from a data sheet, and a customer-specific concession from an old proposal into a statement that never existed as an approved unit before. The document-level metadata can be completely intact: every source properly versioned, owned, and dated. Meanwhile, the generated answer that drew on several of them has already lost the control context that made each source trustworthy in the first place. The question worth asking is no longer just whether the documents are governed. It is which pieces of authority actually traveled into the generated answer, and which quietly did not. Even systems that keep a knowledge base synchronized with its underlying sources are answering a source-level question, not a claim-level one: knowing that a source changed is not the same as knowing which reusable claims and active responses depended on it, which of their approvals may therefore need reconsideration, and which historical submissions should simply remain traceable to the state that existed when they were made.</p>
+
+      <p>Model capability alone does not close that gap. One part of that problem, temporal change, has been tested directly: a 2026 study in Findings of the ACL examined how language models handle facts that have changed since a document was written, using a benchmark built from Wikidata's own record of what changed and when. Three findings matter: a temporal conflict can appear in the model's generated reasoning without reaching its final answer; explicitly prompting the model to consider whether a fact was outdated increased how often it mentioned temporal change but did not improve accuracy; and larger models detected the conflict more often than smaller ones but still frequently failed to resolve it correctly. Translate that back into the proposal example: a system can retrieve the newest security-control statement and the older one sitting beside it, generate a fluent paragraph from either, and give no outward sign of which one it actually used or why. The polish of the output has no necessary relationship to the currency of what produced it.</p>
+
+      <h2>Why the old controls don't automatically survive the new granularity</h2>
+
+      <p>Reuse has always run on a lifecycle: knowledge gets created, approved, stored, and reused. At some point the surrounding context changes: a policy updates, a certification lapses, a price moves. The stored knowledge becomes questionable, but only if something notices, and then it has to be revalidated, qualified, superseded, or retired before it is safe to reuse again. The controls for that back half are not new inventions either. What AI has changed dramatically is the front half, especially reuse, which is now far faster and cheaper. It does not solve the back half merely by becoming better at retrieval and drafting. If the maintenance process was already struggling to detect change, revalidate content and retire what no longer holds, faster reuse simply exposes that weakness more quickly, and does so at the level of the individual claim rather than the document, per the shift described above.</p>
+
+      <p>This is why the pattern generalizes so cleanly past proposals: a customer support assistant answering from a knowledge base that has not been re-approved in a year, a compliance tool drawing on a policy document that was superseded last quarter, an internal copilot citing a security control that shipped with a product version nobody sells anymore. The sources differ. The stalled step does not.</p>
+
+      <h2>Currency is not the only thing that can be wrong</h2>
+
+      <p>It is tempting to compress this entire problem into a single question: is this still current? But that undersells how many distinct ways a correct-sounding answer can be unsafe to reuse. A statement can be perfectly true and still fail on a different axis entirely.</p>
+
+      <p><strong>Currency</strong> asks whether this is still the organization's position today, independent of whether it was true when written. <strong>Applicability</strong> asks whether it holds for this specific customer, jurisdiction, product version, or contract type; a statement can be current in general and still wrong here. <strong>Provenance</strong> asks where the assertion actually came from, and whether that source can still be traced from the generated sentence back to the document and the approval that produced it, or whether that thread was lost somewhere in drafting. <strong>Authorization</strong> asks who is empowered to stand behind the claim today. An SME's sign-off two years ago records a past approval, not necessarily a standing one. The useful question is what would invalidate that approval: a product change, a regulatory update, a lapsed certification, or some other event, and whether the system can detect it. And <strong>supersession</strong> asks the sharpest question of all: has something newer already replaced or contradicted this, and if so, does the system show that conflict or quietly pick a side.</p>
+
+      <p>A retrieval system optimized for finding the best semantic match will do reasonably well on none of these by default, because "most similar" was never the same target as "still true, still applicable, still traceable, still authorized, and not yet superseded." Treating similarity as a proxy for all five is where a lot of the actual risk in AI-assisted reuse originates.</p>
+
+      <h2>What the CIO actually owns here</h2>
+
+      <p>None of the five questions above are technology questions in the first instance. Whether a security statement is current belongs to Security. Whether a commercial concession is still authorized belongs to Commercial. Whether a legal position holds in a given jurisdiction belongs to Legal. Those are business judgments made by the people who own the underlying fact, and no amount of tooling relocates that ownership to IT or to whichever function ends up running the platform.</p>
+
+      <p>What belongs to technology leadership is narrower, and worth stating precisely rather than gesturing at. A bid manager approving a final proposal is not claiming to have personally verified every sentence in it; that was never realistic, before AI or after. What the approval actually means is closer to: I have sufficient reason to rely on the designated owners, approvals, and controls that produced these inputs. The business owns the assertions. Technology leadership owns, or shares responsibility for, the machinery that preserves the provenance, status and control signals those assertions depend on; the exact organizational owner will vary. What should not vary is the underlying job: making sure the system the business now depends on keeps that reliance chain visible, so that when something generates an answer depending on a fact someone else owns, it is clear who owns that fact, whether it has been checked recently, and what happens if it hasn't, rather than letting the system quietly absorb the uncertainty into fluent prose and hand the business a finished-looking answer as though the question had already been settled.</p>
+
+      <p>That distinction matters because it is exactly where evaluation gets muddled. Across the current generation of RFP and proposal-automation platforms, and the broader quote-to-cash and contract tools around them, three different capabilities are easy to conflate when assessing what a system actually does: a citation attached to a sentence, a confidence score attached to a draft, and the underlying fact actually being current. The first two are real technical achievements, and worth having. The third is a business judgment that a citation or a score cannot substitute for. A CIO evaluating one of these tools is not being unreasonable to ask what happens the week after a security certification lapses: does anything in the system change, or does the old answer keep generating exactly as fluently as it did the day it was approved?</p>
+
+      <h2>A framework, not a checklist</h2>
+
+      <p>The answer is not to govern every reused sentence with the same intensity. The control should follow consequence. A pricing concession, security certification, legal commitment, or regulatory statement may justify claim-level ownership, dependencies, and event-driven revalidation; routine corporate boilerplate may not. The point is to know which knowledge the organization is prepared to reuse on trust, and which claims require stronger evidence before they can speak for the organization.</p>
+
+      <p>For the claims that clear that bar, the five dimensions above and the reliance chain describe a single operating model, not five separate concerns. Know what a generated claim actually came from, where it applies, and who stands behind it today. Know what it depends on, and whose approval rests on that same dependency. And when the underlying state changes, identify the affected claims and route them for reconsideration, rather than simply refreshing the source and calling the job done. Source, claim, applicability, authority, dependency, change event, impact, revalidation: that chain is what governing the claim, rather than only the document, actually requires in practice. This isn't an authoritative standard, and it doesn't need to be one; it's a way to interrogate whether an AI-enabled knowledge workflow has actually moved past better search and drafting, or is simply doing the same reuse faster. It is also deliberately scoped: a framework for the validity of reused organizational knowledge, not for model security, data privacy, prompt injection, or AI governance as a whole; those need their own controls.</p>
+
+      <h2>What to actually ask for</h2>
+
+      <p>The argument isn't for slowing AI adoption down or re-verifying every reused answer by hand; most of what these systems automate genuinely was the tedious part, and removing tedium is a legitimate win. It's for being specific about what "solved" would have to include before a CIO treats the currency problem as handled. The five things below are how that framework actually gets tested, from an internal build or a vendor alike, each one concrete enough to demonstrate rather than take on faith:</p>
+
+      <ul>
+        <li><strong>A traceable path from generated answer to source and approval date</strong>, not just a citation to a document, so provenance survives past the drafting step rather than existing only in an audit log nobody opens.</li>
+        <li><strong>An explicit owner, current status, and applicability scope attached to any reused claim, visible in the review workflow itself</strong>, including the product, jurisdiction, customer class, or other boundary the claim actually applies to, not buried in metadata a reviewer has to go looking for.</li>
+        <li><strong>An event-driven revalidation mechanism that identifies what depends on a changed source.</strong> Reusable content and active drafts should be flagged or reopened as appropriate, while historical submissions remain immutable records. Propagate the impact of a change, not replacement content.</li>
+        <li><strong>Visible disagreement between two approved sources</strong>, rather than a single fluent answer that silently picked one. If the system can retrieve conflicting material, the reviewer should see the conflict, not just the resolution.</li>
+        <li><strong>A defined unresolved state.</strong> When no current, applicable answer exists, the system should be able to say so and route the gap for resolution, rather than converting the absence of good material into plausible-sounding prose. A system that always produces a confident answer, even when it shouldn't have enough to work with, is arguably more dangerous than one that occasionally says it doesn't know.</li>
+      </ul>
+
+      <p>A useful test is deliberately mundane: change a source behind a material approved claim, whether a certification, a price, a product capability, or a policy. Then watch what happens. Does the system identify the affected reusable claims and active work, reopen the right approvals, surface the uncertainty, and leave historical submissions intact?</p>
+
+      <p>A system that can pass that test has moved beyond retrieval and drafting into managing the conditions under which reuse remains justified. Those capabilities need to be demonstrated directly; polished output is not evidence that the underlying knowledge remains fit for reuse.</p>
+
+    </div>
+
+    <div class="article-back">
+      <a href="../articles.html" class="btn-text">&larr; All Articles</a>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-name">Abhishek Sinha</div>
+        <div class="footer-sub">Technology Executive &middot; CTO &middot; CIO &middot; Board Advisor</div>
+      </div>
+      <nav class="footer-nav">
+        <a href="https://epistamate.com/index.html#contact" target="_blank">Get in touch</a>
+        <a href="https://www.linkedin.com/in/abhishek-sinha-bgl" target="_blank">LinkedIn</a>
+        <a href="../articles.html">Articles</a>
+        <a href="../about.html">About</a>
+      </nav>
+    </div>
+    <div class="footer-copy">&copy; 2026 Abhishek Sinha</div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>
