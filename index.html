@@ -37,6 +37,20 @@
     .home-recent-item h3{font-family:var(--f-display);font-size:1.12rem;line-height:1.35;color:var(--navy);margin:.75rem 0}
     .home-recent-item .meta{flex-wrap:wrap}
     @media(max-width:760px){.home-editorial .home-feature-grid{grid-template-columns:1fr;gap:1.5rem}.home-feature + .home-feature{border-left:0;border-top:1px solid var(--cream-dk);padding-left:0;padding-top:1.5rem}.home-recent-grid{grid-template-columns:1fr;gap:0}.home-recent-item+.home-recent-item{border-top:1px solid var(--cream-dk)}}
+
+    /* Two editorial links on the personal site; articles remain hosted on Epistamate Insights. */
+    .home-insights-latest{max-width:920px;margin:1.15rem 0 1.15rem;padding:1rem 1.2rem 1.05rem;border:1px solid rgba(255,255,255,.22);background:rgba(255,255,255,.06);border-radius:7px}
+    .home-insights-latest-top{display:flex;justify-content:space-between;align-items:baseline;gap:.8rem 1.5rem;margin-bottom:.7rem}
+    .home-insights-latest-top h2{font:500 .75rem/1.4 var(--f-sans);letter-spacing:.065em;text-transform:uppercase;color:#b8d8e5}
+    .home-insights-latest-top>a{font:400 .76rem/1.4 var(--f-sans);color:#d9edf4;text-decoration:underline;text-underline-offset:3px;white-space:nowrap}
+    .home-insights-latest-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.1rem}
+    .home-insights-latest-item{min-width:0;display:flex;flex-direction:column;gap:.35rem;line-height:1.32;text-decoration:none}
+    .home-insights-latest-item+.home-insights-latest-item{border-left:1px solid rgba(255,255,255,.23);padding-left:1.1rem}
+    .home-insights-latest-item span{font:400 .69rem/1.4 var(--f-sans);letter-spacing:.04em;color:#aac6d5;text-transform:uppercase}
+    .home-insights-latest-item strong{font:500 clamp(.97rem,1.4vw,1.13rem)/1.3 var(--f-display);color:#fff;transition:color .15s}
+    .home-insights-latest-item:hover strong,.home-insights-latest-item:focus-visible strong{color:#b8d8e5}
+    .home-insights-latest-item:focus-visible,.home-insights-latest-top>a:focus-visible{outline:2px solid #b8d8e5;outline-offset:3px}
+    @media(max-width:700px){.home-insights-latest{padding:.95rem 1rem}.home-insights-latest-top{align-items:flex-start;flex-wrap:wrap;gap:.25rem 1rem}.home-insights-latest-top>a{white-space:normal}.home-insights-latest-list{grid-template-columns:1fr;gap:.7rem}.home-insights-latest-item+.home-insights-latest-item{border-left:0;border-top:1px solid rgba(255,255,255,.18);padding:.65rem 0 0}.home-insights-latest-item strong{font-size:1.05rem}}
   </style>
 </head>
 <body>
@@ -60,6 +74,22 @@
       <p class="hero-eyebrow">Technology &nbsp;·&nbsp; Organisations &nbsp;·&nbsp; AI</p>
       <h1 class="hero-title">Technology changes what we do.<br><em>And what we imagine possible.</em></h1>
       <p style="max-width:780px;color:var(--cream);opacity:.85;line-height:1.7;margin:1.3rem 0 1.7rem">Reflections on enterprise technology, AI and human judgment, informed by a career spent working with organisations in change and a curiosity about what comes next.</p>
+      <aside class="home-insights-latest" aria-labelledby="home-insights-latest-title">
+        <div class="home-insights-latest-top">
+          <h2 id="home-insights-latest-title">Latest from Epistamate Insights</h2>
+          <a href="https://epistamate.com/blog/">Explore Epistamate Insights →</a>
+        </div>
+        <div class="home-insights-latest-list">
+          <a class="home-insights-latest-item" href="https://epistamate.com/blog/industry-insights/automotive/ai-automotive-rd-engineering.html">
+            <span>11 November 2026 · Automotive R&amp;D</span>
+            <strong>AI in Automotive R&amp;D and Engineering: What the Evidence Shows</strong>
+          </a>
+          <a class="home-insights-latest-item" href="https://epistamate.com/blog/enterprise-ai-strategy-evidence-decisions.html">
+            <span>7 November 2026 · Enterprise AI strategy</span>
+            <strong>Enterprise AI Strategy: Good Advice, Uneven Evidence, Hard Decisions</strong>
+          </a>
+        </div>
+      </aside>
       <div class="hero-actions">
         <a href="articles.html" class="btn-primary">Read the Articles</a>
         <a href="about.html" class="btn-ghost-hero">About Abhishek</a>
@@ -69,15 +99,13 @@
 
   <section class="featured-section home-editorial">
     <div class="section-inner">
-      <div class="section-kicker">Recent essays</div>
+      <div class="section-kicker">Selected essays</div>
       <div class="home-feature-grid">
-        <article class="home-feature"><a href="articles/enterprise-ai-strategy-evidence-decisions.html"><span class="tag">Enterprise AI strategy</span><h2>Enterprise AI Strategy: Good Advice, Uneven Evidence, Hard Decisions</h2><p class="excerpt">A critical look at what AI adoption and ROI evidence actually establishes, and which decisions remain with enterprise leaders. Originally published in Epistamate Insights.</p><div class="meta"><span>November 2026</span><span>Evidence-informed article</span></div></a></article>
         <article class="home-feature"><a href="articles/when-ai-changes-world-around-enterprise.html"><span class="tag">CIO Leadership</span><h2>When AI Changes the World Around the Enterprise</h2><p class="excerpt">AI is changing not only what enterprises can do, but the competitive, social and regulatory environment in which business decisions must succeed.</p><div class="meta"><span>October 2026</span><span>9 min read</span></div></a></article>
+        <article class="home-feature"><a href="articles/unfinished-ai-enterprise.html"><span class="tag">CIO Leadership</span><h2>The Unfinished AI Enterprise</h2><p class="excerpt">A successful AI programme can meet its objectives while changing what the organisation understands about its work and future possibilities.</p><div class="meta"><span>October 2026</span><span>13 min read</span></div></a></article>
       </div>
       <div class="home-recent-heading"><div class="section-kicker">Earlier writing</div><a href="articles.html" class="latest-all">All articles &rarr;</a></div>
       <div class="home-recent-grid">
-        <article class="home-recent-item"><a href="articles/unfinished-ai-enterprise.html"><span class="tag">CIO Leadership</span><h3>The Unfinished AI Enterprise</h3><div class="meta"><span>October 2026</span><span>13 min read</span></div></a></article>
-
         <article class="home-recent-item"><a href="articles/ai-assurance-halo-validation-passed.html"><span class="tag">AI Governance</span><h3>The AI Assurance Halo: What “Validation Passed” Does and Doesn’t Do</h3><div class="meta"><span>October 2026</span><span>15 min read</span></div></a></article>
         <article class="home-recent-item"><a href="articles/knowledge-base-never-hard-part.html"><span class="tag">AI Governance</span><h3>The Knowledge Base Was Never the Hard Part</h3><div class="meta"><span>September 2026</span><span>12 min read</span></div></a></article>
         <article class="home-recent-item"><a href="articles/ai-evaluation-decision-instrument.html"><span class="tag">AI Governance</span><h3>An AI Evaluation Is a Decision Instrument, Not a Score</h3><div class="meta"><span>August 2026</span><span>6 min read</span></div></a></article>
