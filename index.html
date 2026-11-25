@@ -52,7 +52,20 @@
     .home-insights-latest-item:focus-visible,.home-insights-latest-top>a:focus-visible{outline:2px solid #b8d8e5;outline-offset:3px}
     @media(max-width:700px){.home-insights-latest{padding:.95rem 1rem}.home-insights-latest-top{align-items:flex-start;flex-wrap:wrap;gap:.25rem 1rem}.home-insights-latest-top>a{white-space:normal}.home-insights-latest-list{grid-template-columns:1fr;gap:.7rem}.home-insights-latest-item+.home-insights-latest-item{border-left:0;border-top:1px solid rgba(255,255,255,.18);padding:.65rem 0 0}.home-insights-latest-item strong{font-size:1.05rem}}
   </style>
-</head>
+<style>
+.hero{padding:clamp(1.6rem,3vw,2.2rem) 0 clamp(1.4rem,2.7vw,2rem)}
+.hero-title{font-size:clamp(2.2rem,4.2vw,3.35rem);max-width:920px;margin-bottom:.8rem}
+.hero-inner>p:not(.hero-eyebrow){margin:.8rem 0 1rem!important}
+.home-insights-latest{margin:.85rem 0;padding:.75rem 1rem}
+.home-editorial .home-feature-grid{gap:clamp(1.5rem,3vw,2.6rem);align-items:stretch}
+.home-editorial .home-feature+.home-feature{border:0;padding:0}
+.home-feature>a{display:flex;flex-direction:column;align-items:flex-start;height:100%}
+.home-essay-image{display:block;width:100%;aspect-ratio:1200/630;object-fit:contain;background:#f1f3f5;border-radius:5px;margin-bottom:1rem}
+.home-feature .meta{margin-top:auto}
+.home-feature h2{margin:.65rem 0}
+.home-recent-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+@media(max-width:760px){.home-editorial .home-feature-grid,.home-recent-grid{grid-template-columns:1fr}.home-editorial .home-feature+.home-feature{border-top:1px solid var(--cream-dk);padding-top:1.3rem}}
+</style></head>
 <body>
 
   <nav class="nav">
@@ -80,9 +93,9 @@
           <a href="https://epistamate.com/blog/">Explore Epistamate Insights →</a>
         </div>
         <div class="home-insights-latest-list">
-          <a class="home-insights-latest-item" href="https://epistamate.com/blog/industry-insights/automotive/ai-automotive-rd-engineering.html">
-            <span>11 November 2026 · Automotive R&amp;D</span>
-            <strong>AI in Automotive R&amp;D and Engineering: What the Evidence Shows</strong>
+          <a class="home-insights-latest-item" href="https://epistamate.com/blog/industry-insights/automotive/ai-automotive-manufacturing.html">
+            <span>13 November 2026 · Automotive manufacturing</span>
+            <strong>AI in Automotive Manufacturing: What the Evidence Shows</strong>
           </a>
           <a class="home-insights-latest-item" href="https://epistamate.com/blog/enterprise-ai-strategy-evidence-decisions.html">
             <span>7 November 2026 · Enterprise AI strategy</span>
@@ -101,13 +114,14 @@
     <div class="section-inner">
       <div class="section-kicker">Selected essays</div>
       <div class="home-feature-grid">
-        <article class="home-feature"><a href="articles/ai-enterprise-organisational-design.html"><span class="tag">Enterprise AI strategy · New essay</span><h2>AI and Enterprise Organisational Design</h2><p class="excerpt">How AI changes the economics of expertise, work, decision authority and accountability, and seven questions for enterprise leaders.</p><div class="meta"><span>November 2026</span><span>Management perspective</span></div></a></article>
-        <article class="home-feature"><a href="articles/when-ai-changes-world-around-enterprise.html"><span class="tag">CIO Leadership</span><h2>When AI Changes the World Around the Enterprise</h2><p class="excerpt">AI is changing not only what enterprises can do, but the competitive, social and regulatory environment in which business decisions must succeed.</p><div class="meta"><span>October 2026</span><span>9 min read</span></div></a></article>
-        <article class="home-feature"><a href="articles/unfinished-ai-enterprise.html"><span class="tag">CIO Leadership</span><h2>The Unfinished AI Enterprise</h2><p class="excerpt">A successful AI programme can meet its objectives while changing what the organisation understands about its work and future possibilities.</p><div class="meta"><span>October 2026</span><span>13 min read</span></div></a></article>
+        <article class="home-feature"><a href="articles/ai-enterprise-organisational-design.html"><img class="home-essay-image" src="images/ai-enterprise-organisational-design.jpg" alt="" loading="lazy" decoding="async"><span class="tag">Enterprise AI strategy · New essay</span><h2>AI and Enterprise Organisational Design</h2><p class="excerpt">How AI changes the economics of expertise, work, decision authority and accountability, and seven questions for enterprise leaders.</p><div class="meta"><span>November 2026</span><span>Management perspective</span></div></a></article>
+        <article class="home-feature"><a href="articles/when-ai-changes-world-around-enterprise.html"><img class="home-essay-image" src="images/when-ai-changes-world-around-enterprise.jpg" alt="" loading="lazy" decoding="async"><span class="tag">CIO Leadership</span><h2>When AI Changes the World Around the Enterprise</h2><p class="excerpt">AI is changing not only what enterprises can do, but the competitive, social and regulatory environment in which business decisions must succeed.</p><div class="meta"><span>October 2026</span><span>9 min read</span></div></a></article>
+        <article class="home-feature"><a href="articles/unfinished-ai-enterprise.html"><img class="home-essay-image" src="images/unfinished-ai-enterprise-editorial-v2.jpg" alt="" loading="lazy" decoding="async"><span class="tag">CIO Leadership</span><h2>The Unfinished AI Enterprise</h2><p class="excerpt">A successful AI programme can meet its objectives while changing what the organisation understands about its work and future possibilities.</p><div class="meta"><span>October 2026</span><span>13 min read</span></div></a></article>
+        <article class="home-feature"><a href="articles/ai-assurance-halo-validation-passed.html"><img class="home-essay-image" src="images/ai-assurance-halo-editorial-v2.jpg" alt="" loading="lazy" decoding="async"><span class="tag">AI Governance</span><h2>The AI Assurance Halo</h2><p class="excerpt">Why legitimate validation signals can create more confidence than the evidence warrants, and what that means for executive accountability.</p><div class="meta"><span>October 2026</span><span>15 min read</span></div></a></article>
       </div>
       <div class="home-recent-heading"><div class="section-kicker">Earlier writing</div><a href="articles.html" class="latest-all">All articles &rarr;</a></div>
       <div class="home-recent-grid">
-        <article class="home-recent-item"><a href="articles/ai-assurance-halo-validation-passed.html"><span class="tag">AI Governance</span><h3>The AI Assurance Halo: What “Validation Passed” Does and Doesn’t Do</h3><div class="meta"><span>October 2026</span><span>15 min read</span></div></a></article>
+        
         <article class="home-recent-item"><a href="articles/knowledge-base-never-hard-part.html"><span class="tag">AI Governance</span><h3>The Knowledge Base Was Never the Hard Part</h3><div class="meta"><span>September 2026</span><span>12 min read</span></div></a></article>
         <article class="home-recent-item"><a href="articles/ai-evaluation-decision-instrument.html"><span class="tag">AI Governance</span><h3>An AI Evaluation Is a Decision Instrument, Not a Score</h3><div class="meta"><span>August 2026</span><span>6 min read</span></div></a></article>
       </div>
