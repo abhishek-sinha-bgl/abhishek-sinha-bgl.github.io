@@ -38,7 +38,7 @@
     .home-recent-item .meta{flex-wrap:wrap}
     @media(max-width:760px){.home-editorial .home-feature-grid{grid-template-columns:1fr;gap:1.5rem}.home-feature + .home-feature{border-left:0;border-top:1px solid var(--cream-dk);padding-left:0;padding-top:1.5rem}.home-recent-grid{grid-template-columns:1fr;gap:0}.home-recent-item+.home-recent-item{border-top:1px solid var(--cream-dk)}}
 
-    /* Two editorial links on the personal site; articles remain hosted on Epistamate Insights. */
+    /* Editorial links on the personal site; articles remain hosted on Epistamate Insights. */
     .home-insights-latest{max-width:920px;margin:1.15rem 0 1.15rem;padding:1rem 1.2rem 1.05rem;border:1px solid rgba(255,255,255,.22);background:rgba(255,255,255,.06);border-radius:7px}
     .home-insights-latest-top{display:flex;justify-content:space-between;align-items:baseline;gap:.8rem 1.5rem;margin-bottom:.7rem}
     .home-insights-latest-top h2{font:500 .75rem/1.4 var(--f-sans);letter-spacing:.065em;text-transform:uppercase;color:#b8d8e5}
@@ -65,7 +65,7 @@
 .home-feature h2{margin:.65rem 0}
 .home-recent-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
 @media(max-width:760px){.home-editorial .home-feature-grid,.home-recent-grid{grid-template-columns:1fr}.home-editorial .home-feature+.home-feature{border-top:1px solid var(--cream-dk);padding-top:1.3rem}}
-</style></head>
+</style><style>@media(min-width:761px){.home-insights-latest-list{grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem}}</style></head>
 <body>
 
   <nav class="nav">
@@ -93,6 +93,10 @@
           <a href="https://epistamate.com/blog/">Explore Epistamate Insights →</a>
         </div>
         <div class="home-insights-latest-list">
+          <a class="home-insights-latest-item" href="https://epistamate.com/blog/industry-insights/telecommunications/">
+            <span>26 November 2026 · Telecommunications</span>
+            <strong>AI in Telecommunications: Markets, Strategy and Network Evidence</strong>
+          </a>
           <a class="home-insights-latest-item" href="https://epistamate.com/blog/industry-insights/automotive/ai-automotive-manufacturing.html">
             <span>13 November 2026 · Automotive manufacturing</span>
             <strong>AI in Automotive Manufacturing: What the Evidence Shows</strong>
